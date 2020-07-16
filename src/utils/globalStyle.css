@@ -1,0 +1,63 @@
+@font-face{
+    font-family: thaiFont;
+    src: url('../../assets/font/DB Helvethaica X Bd v3.2.ttf');
+}
+
+body {
+    padding: 0;
+    margin: auto;
+    font-family: thaiFont;
+    background-color: #F6F7FB;
+}
+
+.outside-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.menu-side{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 2px 0px rgb(220,220,220, 0.3);
+}
+
+.menu-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.menu-list-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.menu-list-item{
+    border-radius: 19px;
+    height: 38px;
+    width: 38px;
+    background-color: #C4C4C4;
+}
+
+.menu-list-item.active{
+    background-color: #008140;
+}
+
+.menu-list-item:hover{
+    cursor: pointer;
+}
+
+.profile{
+    border-radius: 19px;
+    margin-bottom: 20%;
+}
