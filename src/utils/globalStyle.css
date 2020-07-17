@@ -1,12 +1,27 @@
 @font-face{
-    font-family: thaiFont;
+    font-family: DB-Helvethaica-X-75Bd;
     src: url('../../assets/font/DB Helvethaica X Bd v3.2.ttf');
+}
+
+@font-face{
+    font-family: DB-Helvethaica-X-55-Regular;
+    src: url('../../assets/font/DB Helvethaica X v3.2.ttf');
+}
+
+@font-face{
+    font-family: DB-Helvethaica-X-65-Med;
+    src: url('../../assets/font/DB Helvethaica X Med v3.2.ttf');
+}
+
+@font-face{
+    font-family: DB-Helvethaica-X-85Blk;
+    src: url('../../assets/font/DB Helvethaica X Blk v3.2.ttf');
 }
 
 body {
     padding: 0;
     margin: auto;
-    font-family: thaiFont;
+    font-family: DB-Helvethaica-X-75Bd;
     background-color: #F6F7FB;
 }
 
