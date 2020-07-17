@@ -4,7 +4,7 @@
     In arrow class you can call this class again at you main css and modify:
     - the size of arrow by changing padding: 7px;
     - the thick of arrow by changing border-width: 0 5px 5px 0;
-    - color by changcing border: solid #008140;
+    - color by changcing border-color: #008140;
 */
 .arrow {
     border: solid black;
