@@ -76,3 +76,10 @@ body {
     border-radius: 19px;
     margin-bottom: 20%;
 }
+
+.container{
+    padding-top: 40px;
+    padding-left: 35px;
+    padding-right: 35px;
+    width: 100%;
+}
