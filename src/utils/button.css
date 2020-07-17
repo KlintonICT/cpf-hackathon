@@ -27,8 +27,6 @@
     color: #008140;
 }
 
-.rounded-btn:hover,
-.rectangele-btn:hover,
 .rounded-btn.active,
 .rectangele-btn.active{
     background-color:#008140;
