@@ -75,11 +75,171 @@
             </div>
             <div style="font-size: 1.5em;">ออเดอร์ที่เข้ามา</div>
             <div class="button-part">
-                <div class="rounded-btn active" style="margin-right:20px">รูปแบบแผนที่</div>
-                <div class="rounded-btn">รูปแบบรายการ</div>
+                <div class="rounded-btn active" id="map-btn" style="margin-right:20px">รูปแบบแผนที่</div>
+                <div class="rounded-btn" id="order-list-btn">รูปแบบรายการ</div>
             </div>
             <div class="map-status">
-                <img src="../../assets/image/map-cluster.png" attr="map-cluster" class="map-cluster"/>
+                <div class="button-trigger">
+                    <img src="../../assets/image/map-cluster.png" id="map-cluster" attr="map-cluster" class="map-cluster"/>
+                    <div class="list-of-order" id="list-of-order">
+                        <table width="100%" cellspacing="0">
+                            <tr>
+                                <th>ลูกค้า</th>
+                                <th>วันที่</th>
+                                <th>เวลา</th>
+                                <th>เลขไปรษณีย์</th>
+                                <th>ที่อยู่</th>
+                                <th>กลุ่ม</th>
+                                <th>สถานะ</th>
+                            </tr>
+                            <tr>
+                                <td style="font-family: DB-Helvethaica-X-65-Med;">
+                                    <a href="./orderDetail.html">คุณเด่นดวง</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">12/03/20</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">11:30</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">73190</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">หมู่บ้านดวงฤทัย 234/3 แขวงแสนแสบ...</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">
+                                        <img src="../../assets/icon/red-location.png" alt="loc" width="15px" height="15px" style="margin-bottom: -3px;"/>
+                                        <span>A</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="./orderDetail.html">รอการจัดส่ง</a>
+                                </td>
+                                <td class="larg-arrow">
+                                    <a href="#"><i class="arrow right"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-family: DB-Helvethaica-X-65-Med;">
+                                    <a href="./orderDetail.html">คุณเด่นดวง</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">12/03/20</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">11:30</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">73190</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">หมู่บ้านดวงฤทัย 234/3 แขวงแสนแสบ...</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">
+                                        <img src="../../assets/icon/red-location.png" alt="loc" width="15px" height="15px" style="margin-bottom: -3px;"/>
+                                        <span>A</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="./orderDetail.html">รอการจัดส่ง</a>
+                                </td>
+                                <td class="larg-arrow">
+                                    <a href="#"><i class="arrow right"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-family: DB-Helvethaica-X-65-Med;">
+                                    <a href="./orderDetail.html">คุณเด่นดวง</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">12/03/20</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">11:30</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">73190</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">หมู่บ้านดวงฤทัย 234/3 แขวงแสนแสบ...</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">
+                                        <img src="../../assets/icon/red-location.png" alt="loc" width="15px" height="15px" style="margin-bottom: -3px;"/>
+                                        <span>A</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="./orderDetail.html">รอการจัดส่ง</a>
+                                </td>
+                                <td class="larg-arrow">
+                                    <a href="#"><i class="arrow right"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-family: DB-Helvethaica-X-65-Med;">
+                                    <a href="./orderDetail.html">คุณเด่นดวง</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">12/03/20</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">11:30</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">73190</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">หมู่บ้านดวงฤทัย 234/3 แขวงแสนแสบ...</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">
+                                        <img src="../../assets/icon/red-location.png" alt="loc" width="15px" height="15px" style="margin-bottom: -3px;"/>
+                                        <span>A</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="./orderDetail.html">รอการจัดส่ง</a>
+                                </td>
+                                <td class="larg-arrow">
+                                    <a href="#"><i class="arrow right"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-family: DB-Helvethaica-X-65-Med;">
+                                    <a href="./orderDetail.html">คุณเด่นดวง</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">12/03/20</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">11:30</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">73190</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">หมู่บ้านดวงฤทัย 234/3 แขวงแสนแสบ...</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">
+                                        <img src="../../assets/icon/red-location.png" alt="loc" width="15px" height="15px" style="margin-bottom: -3px;"/>
+                                        <span>A</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="./orderDetail.html">รอการจัดส่ง</a>
+                                </td>
+                                <td class="larg-arrow">
+                                    <a href="#"><i class="arrow right"></i></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
                 <div class="delivery-group">
                     <div class="delivery-group-title">สถานะการจัดส่ง</div>
                     <div class="delivery-group-item">
