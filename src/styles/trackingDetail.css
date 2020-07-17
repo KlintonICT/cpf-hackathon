@@ -122,6 +122,7 @@
     margin-bottom: 5%;
     color: #008140;
     font-family: DB-Helvethaica-X-55-Regular;
+    cursor: pointer;
 }
 
 .save{
