@@ -1,0 +1,36 @@
+/* 
+    Usage:
+    <div class="rounded-btn active">
+        <span>Button</span>     ////// you can play around with text as well like change size of text
+    </div>
+    Note:
+    You can style manually by calling this class into your main css
+*/
+
+.rounded-btn{
+    border: 1px solid #008140;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline-block;
+    border-radius: 100px;
+    color: #008140;
+}
+
+.rectangele-btn {
+    border: 3px solid #008140;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline-block;
+    border-radius: 8px;
+    color: #008140;
+}
+
+.rounded-btn:hover,
+.rectangele-btn:hover,
+.rounded-btn.active,
+.rectangele-btn.active{
+    background-color:#008140;
+    color: white;
+}

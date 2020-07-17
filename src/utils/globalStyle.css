@@ -68,9 +68,6 @@ body {
 
 .menu-list-item.active{
     background-color: #008140;
-}
-
-.menu-list-item:hover{
     cursor: pointer;
 }
 
