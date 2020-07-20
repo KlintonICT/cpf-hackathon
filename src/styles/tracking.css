@@ -135,3 +135,12 @@ td a{
 .status-arrow .arrow{
     padding: 5px;
 }
+
+#big-map {
+    width: 69%;
+    height: 500px;
+    /* float: left;
+    margin-top: 1.7em; */
+    background-color: gray;
+    border-radius: 15px;
+}
