@@ -145,12 +145,6 @@
 #small-map {
     width: 100%;
     height: 400px;
-<<<<<<< HEAD
-    float: left;
-    background-color: gray;
-    border-radius: 15px;
-}
-=======
     background-color: gray;
     border-radius: 15px;
   }
@@ -171,4 +165,3 @@
     height: 20px;
     cursor: pointer;
   }
->>>>>>> 1ecee29a11d57da1d87ea48e70adeeb6c44a5fcd

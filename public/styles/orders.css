@@ -179,7 +179,6 @@ tr:last-child td:last-child {
     height: 20px;
     border-radius: 50%;
     cursor: pointer;
-<<<<<<< HEAD
   }
 
 .group-sub-title {
@@ -195,7 +194,6 @@ tr:last-child td:last-child {
 .divider{ 
     border: 0.7px solid #D9D9D9;
     margin: 15px 0;
-=======
 }
 
 .marker-cp {
@@ -204,5 +202,4 @@ tr:last-child td:last-child {
     width: 20px;
     height: 20px;
     cursor: pointer;
->>>>>>> 1ecee29a11d57da1d87ea48e70adeeb6c44a5fcd
 }
