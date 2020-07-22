@@ -137,10 +137,9 @@ td a{
 }
 
 #big-map {
-    width: 100%;
+    width: 69%;
     height: 400px;
     float: left;
-    margin-top: 1.7em;
     background-color: gray;
     border-radius: 15px;
 }
