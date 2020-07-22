@@ -282,22 +282,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="./script/orders.js"></script>
     <script>
-        function initMap() {
-            var bangkok = {lat: 13.75, lng: 100.51}
-            var map = new google.maps.Map(
-                document.getElementById('big-map'), {zoom: 14, center: bangkok}
-            );
-            // var marker = new google.maps.Marker({position: bangkok, map: map});
-            var labels = '123456789';
-            var markers = locations.map(function(location, i) {
-                return new google.maps.Marker({
-                    position: location,
-                    label: labels[i % labels.length]
-                }); 
-            });
-            var markerCluster = new MarkerClusterer(map, markers,
-            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-        }
         var locations = [
             {lat: 13.75, lng:100.50},
             {lat: 13.76, lng:100.53},
@@ -389,11 +373,6 @@
             })
         })
     </script>
-    <script src="../script/markerclusterer.js" type="text/javascript"></script>
-    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAy3o3AvCwmaDdzs3oHidU1wWP8o4dWBCU&callback=initMap&v=3.exp"> -->
-    </script>
-    <script src="./script/markerclusterer.js" type="text/javascript"></script>    
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAy3o3AvCwmaDdzs3oHidU1wWP8o4dWBCU&callback=initMap&v=3.exp"></script>
 </body>
 
 </html>
