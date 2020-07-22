@@ -11,9 +11,6 @@
     <link rel="stylesheet" type="text/css" href="./utils/button.css" />
     <link rel="stylesheet" type="text/css" href="./styles/trackingDetail.css" />
     <link rel="stylesheet" type="text/css" href="./styles/orderDetail.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <!-- jQuery Modal -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
@@ -76,7 +73,7 @@
                     </div>
                     <div class="row-layout" style="margin-top: 1.3em;">
                         <div style="font-size: 1.3em">คนส่งสินค้า</div>
-                        <a href="#edit-driver-page" rel="modal:open">
+                        <a href="#edit-driver-page" id="open-modal">
                             <img src="./assets/icon/edit.png" alt="edit" class="edit-icon"/>
                         </a>
                     </div>
@@ -106,7 +103,7 @@
                         </tr>
                     </table>
                     <div style="font-size: 1.3em;margin-top: 3%;">อัพเดตจากคนส่งสินค้า</div>
-                    <div class="driver-update-container" style="text-align: center;">
+                    <div class="driver-update-container-order" style="text-align: center;">
                         <div class="preparing-order-text">
                             กำลังจัดเตรียมออเดอร์
                         </div>
@@ -326,18 +323,88 @@
                     </div>
                 </div>
             </div>
-            <div class="save">
+            <!-- <div class="save">
                 <div class="save-change">บันทึกการเปลี่ยนแปลง</div>
-            </div>
+            </div> -->
         </div>
         <!------------- edit driver -------------->
         <div id="edit-driver-page" class="modal">
-            <p>Thanks for clicking. That felt good.</p>
-            <a href="#" rel="modal:close">Close</a>
+            <div class="modal-title">แก้ไขคนส่งสินค้า</div>
+            <div class="modal-body">
+                <div class="row-layout modal-item-container">
+                    <img src="./assets/image/driver.jpg" alt="driver" class="modal-image-driver">
+                    <div>
+                        <div>
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                        </div>
+                        <div class="modal-name">นายสมร ไกรคุช</div>
+                        <div class="modal-detail">อยู่ห่างจากบริเวณนี้ 0.5 กม.</div>
+                    </div>
+                    <div class="rounded-btn">เลือก</div>
+                </div>
+                <div class="divider" style="width: 90%; margin-left: 5%;"></div>
+                <div class="row-layout modal-item-container">
+                    <img src="./assets/image/driver2.jpg" alt="driver" class="modal-image-driver">
+                    <div>
+                        <div>
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/no-rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/no-rate.png" alt="rate" width="15px" height="15px" />
+                        </div>
+                        <div class="modal-name">นายสงสันต์ วันสุข</div>
+                        <div class="modal-detail">อยู่ห่างจากบริเวณนี้ 0.6 กม.</div>
+                    </div>
+                    <div class="rounded-btn">เลือก</div>
+                </div>
+                <div class="divider" style="width: 90%; margin-left: 5%;"></div>
+                <div class="row-layout modal-item-container">
+                    <img src="./assets/image/driver3.jpg" alt="driver" class="modal-image-driver">
+                    <div>
+                        <div>
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/no-rate.png" alt="rate" width="15px" height="15px" />
+                        </div>
+                        <div class="modal-name">นายสมรักษ์ สุดใจ</div>
+                        <div class="modal-detail">อยู่ห่างจากบริเวณนี้ 0.85 กม.</div>
+                    </div>
+                    <div class="rounded-btn">เลือก</div>
+                </div>
+                <div class="divider" style="width: 90%; margin-left: 5%;"></div>
+                <div class="row-layout modal-item-container">
+                    <img src="./assets/image/driver4.jpg" alt="driver" class="modal-image-driver">
+                    <div>
+                        <div>
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/no-rate.png" alt="rate" width="15px" height="15px" />
+                        </div>
+                        <div class="modal-name">นายสบาย มาดี</div>
+                        <div class="modal-detail">อยู่ห่างจากบริเวณนี้ 1.2 กม.</div>
+                    </div>
+                    <div class="rounded-btn">เลือก</div>
+                </div>
+            </div>
+            <div class="row-layout modal-button-wrapper">
+                <a href="#" rel="modal:close" class="rectangele-btn">ปิด</a>
+                <a href="#" rel="modal:close" class="change-btn">บันทึกการเปลี่ยนแปลง</a>
+            </div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script type="text/javascript" src="./script/orderDetail.js"></script>
     <script>
         mapboxgl.accessToken =

@@ -11,12 +11,16 @@
   cursor: pointer;
 }
 
-.driver-update-container{
+.driver-update-container-order{
+  background-color:white;
+  border: 1px solid #D9D9D9;
+  width: 80%;
+  border-radius: 15px;
+  padding: 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-top: 1%;
-  padding: 1.5em 0;
 }
 
 .preparing-order-text{
@@ -70,4 +74,69 @@
 
 .right-block-right-box{
   float: right;
+}
+
+#edit-driver-page{
+  border-radius: 0;
+  max-width: 25%;
+  padding: 0;
+  z-index: 1000;
+}
+
+.modal-title{
+  background-color: #008140;
+  color: white;
+  font-size: 1.3em;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.modal-button-wrapper{
+  font-size: 1.2em;
+  width: 100%;
+  justify-content: space-around;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+.modal-button-wrapper a{
+  text-decoration: none;
+}
+
+.modal-button-wrapper .rectangele-btn{
+  margin: 0;
+  padding: 0 15%;
+  text-align: center;
+}
+
+.change-btn{
+  border-radius: 8px;
+  color: white;
+  padding: 5px 20px;
+  background-color: #D9D9D9;
+  text-align: center;
+}
+.modal-image-driver{
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+}
+
+.modal-item-container{
+  justify-content: space-between;
+  margin: 10px 20px;
+  font-family: DB-Helvethaica-X-55-Regular; 
+}
+
+.modal-name {
+  font-size:1.4em;
+  font-weight: bold;
+}
+
+.modal-detail{
+  font-size: 0.9em;
+}
+
+.modal-item-container .rounded-btn{
+  font-size: 1.3em;
 }

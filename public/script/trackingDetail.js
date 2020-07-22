@@ -1,7 +1,7 @@
 (() => {
     const openModal = () => {
         $('#open-modal').on('click', () => {
-            $('#edit-driver-page').modal({
+            $('#message-modal').modal({
                 escapeClose: false,
                 clickClose: false,
                 showClose: false
