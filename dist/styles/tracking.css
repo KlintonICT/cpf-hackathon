@@ -138,9 +138,25 @@ td a{
 
 #big-map {
     width: 69%;
-    height: 500px;
-    /* float: left;
-    margin-top: 1.7em; */
+    height: 400px;
+    float: left;
     background-color: gray;
     border-radius: 15px;
+}
+
+.marker {
+    background-image: url('../assets/icon/red-location.png');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.marker-cp {
+    background-image: url('../assets/icon/shop.png');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }

@@ -10,6 +10,10 @@
     <link rel="stylesheet" type="text/css" href="./utils/arrow.css" />
     <link rel="stylesheet" type="text/css" href="./utils/button.css" />
     <link rel="stylesheet" type="text/css" href="./styles/trackingDetail.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
 </head>
 <body>
     <div class="outside-container">
@@ -66,7 +70,7 @@
                         <div class="breif-text">จำนวนบ้านที่ต้องไปส่งทั้งหมด:</div>
                         <div>12 บ้าน</div>
                     </div>
-                    <div style="font-size: 1.3em;margin-top: 3%;">คนขับ</div>
+                    <div style="font-size: 1.3em;margin-top: 3%;">คนส่งสินค้า</div>
                     <table width="60%" style="font-size: 1.15em">
                         <tr>
                             <td rowspan="2" width="60px">
@@ -92,20 +96,30 @@
                             <td>081-234-5678</td>
                         </tr>
                     </table>
-                    <div style="font-size: 1.3em;margin-top: 3%;">อัพเดตจากคนขับ</div>
+                    <div class="row-layout1">
+                        <div style="font-size: 1.3em;">อัพเดตจากคนส่งสินค้า</div>
+                        <a href="#message-modal" id="open-modal" class="rectangele-btn">
+                            <img src="./assets/icon/send.png" alt="send" class="send-icon">
+                            <span>ส่งข้อความ</span>
+                            <img src="./assets/icon/red-dot.png" alt="dot" class="red-dot">
+                        </a>
+                    </div>
                     <div class="driver-update-container">
                         <table width="100%" style="font-size: 1.15em">
                             <tr>
                                 <td rowspan="2" style="vertical-align:top; text-align: center;">
-                                    <div class="rounded-btn">บ้านที่ 3</div>
+                                    <div class="rounded-btn" style="color: red;">บ้านที่ 3</div>
                                 </td>
                                 <td>หมู่บ้านดวงฤทัย</td>
                                 <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left;">
                                     234/3 แขวงแสนแสบ เขตมีนบุรี 10510
                                 </td>
-                                <td rowspan="2">
-                                    <img src="./assets/icon/motorbike.png" alt="motorbike" width="40px" height="30px" />
-                                    <div style="font-family: DB-Helvethaica-X-55-Regular; font-size:0.7em; color:#008140">• กำลังส่ง</div>
+                                <td rowspan="2" style="text-align: center">
+                                    <div class="row-layout" style="justify-content: center">
+                                        <img src="./assets/icon/motorbike-red.png" alt="motorbike" width="40px" height="30px" />
+                                        <span style="font-size: 2em; color:red; margin-top: -15px;">!</span>
+                                    </div>
+                                    <div style="font-family: DB-Helvethaica-X-55-Regular; font-size:0.7em; color:red">• เส้นทางจราจรถูกระงับ</div>
                                 </td>
                             </tr>
                             <tr>
@@ -143,11 +157,19 @@
                         </div>
                         <table width="100%" style="margin-top: 3%;">
                             <tr>
-                                <td style="text-align: center">
+                                <td style="text-align: center; vertical-align: top;" rowspan="3">
                                     <img src="./assets/icon/calculator.png" alt="calculation" width="15px" height="20px" />
                                 </td>
-                                <td style="font-family: DB-Helvethaica-X-55-Regular;">ค่าใช้จ่ายโดยประมาณ</td>
-                                <td>฿320</td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular; vertical-align:top;" rowspan="3">
+                                    <div>ค่าใช้จ่ายโดยประมาณ</div>
+                                    <div class="detail-faded-text">ยอดรวมออเดอร์</div>
+                                    <div class="detail-faded-text">กำไร</div>
+                                </td>
+                                <td rowspan="3" style="vertical-align:top;">
+                                    <div>฿320</div>
+                                    <div class="detail-faded-text">฿200</div>
+                                    <div class="detail-faded-text">฿120</div>
+                                </td>
                                 <td>
                                     <img src="./assets/icon/journey.png" alt="journey" width="20px" height="20px" />
                                 </td>
@@ -155,29 +177,177 @@
                                 <td>13 กม</td>
                             </tr>
                             <tr>
-                                <td rowspan="2" style="vertical-align:top; padding-top: 3px; text-align: center;">
-                                    <img src="./assets/icon/clock.png" alt="calculation" width="20px" height="20px" />
-                                </td>
-                                <td style="font-family: DB-Helvethaica-X-55-Regular;">เวลาที่ใช้โดยประมาณ</td>
-                                <td>30 นาที</td>
                                 <td>
                                     <img src="./assets/icon/delivery-truck.png" alt="journey" width="20px" height="15px" />
                                 </td>
                                 <td style="font-family: DB-Helvethaica-X-55-Regular;">ประเภทการเดินทาง</td>
                                 <td>รถบรรทุก 4 ล้อ</td>
                             </tr>
-                            <tr style="font-family: DB-Helvethaica-X-55-Regular;font-size: 0.9em;color: #828282">
-                                <td style="vertical-align:top;">
-                                    เวลาเริ่มต้น-สิ้นสุด
+                            <tr>
+                                <td style="vertical-align:top; padding-top: 3px; text-align: center;">
+                                    <img src="./assets/icon/clock.png" alt="calculation" width="20px" height="20px" />
                                 </td>
-                                <td style="vertical-align: top;">
-                                    18:00 - 18:30 น.
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <div>เวลาที่ใช้โดยประมาณ</div>
+                                    <div class="detail-faded-text">เวลาเริ่มต้น-สิ้นสุด</div>
+                                </td>
+                                <td>
+                                    <div>30 นาที</div>
+                                    <div class="detail-faded-text">18:00 - 18:30 น.</div>
                                 </td>
                             </tr>
                         </table>
                     </div>
                 </div>
                 <div class="right-block">
+                    <div style="font-size: 1.3em;">ออเดอร์ทั้งหมด</div>
+                    <div class="row-layout button">
+                        <div class="rounded-btn active will-deliver" id="will-deliver">กำลังไปส่ง</div>
+                        <div class="rounded-btn delivered-done" id="delivered-done">จัดส่งเสร็จแล้ว</div>
+                    </div>
+                    <div class="row-layout">
+                        <div class="right-block-left-box">
+                            <table width="100%" style="font-size: 1.15em">
+                                <tr>
+                                    <td rowspan="2" style="vertical-align:top; text-align: center;">
+                                        <div class="rounded-btn">บ้านที่ 1</div>
+                                    </td>
+                                    <td>หมู่บ้านดวงฤทัย</td>
+                                    <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left;">
+                                        234/3 แขวงแสนแสบ เขตมีนบุรี 10510
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span style="font-family: DB-Helvethaica-X-55-Regular;">คุณ</span>
+                                        <span>เด่นดวง</span>
+                                    </td>
+                                    <td style="padding-right: 7%;">
+                                        <span style="font-family: DB-Helvethaica-X-55-Regular;">โทร</span>
+                                        <span>081-234-5678</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td colspan="3">
+                                        <div style="border: 0.8px solid #D9D9D9;margin: 10px 0;"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2" style="vertical-align:top; text-align: center;">
+                                        <div class="rounded-btn">บ้านที่ 2</div>
+                                    </td>
+                                    <td>หมู่บ้านดวงฤทัย</td>
+                                    <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left;">
+                                        234/3 แขวงแสนแสบ เขตมีนบุรี 10510
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span style="font-family: DB-Helvethaica-X-55-Regular;">คุณ</span>
+                                        <span>เด่นดวง</span>
+                                    </td>
+                                    <td style="padding-right: 7%;">
+                                        <span style="font-family: DB-Helvethaica-X-55-Regular;">โทร</span>
+                                        <span>081-234-5678</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td colspan="3">
+                                        <div style="border: 0.8px solid #D9D9D9;margin: 10px 0;"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2" style="vertical-align:top; text-align: center;">
+                                        <div class="rounded-btn">บ้านที่ 3</div>
+                                    </td>
+                                    <td>หมู่บ้านดวงฤทัย</td>
+                                    <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left;">
+                                        234/3 แขวงแสนแสบ เขตมีนบุรี 10510
+                                    </td>
+                                    <td rowspan="2">
+                                        <div></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span style="font-family: DB-Helvethaica-X-55-Regular;">คุณ</span>
+                                        <span>เด่นดวง</span>
+                                    </td>
+                                    <td style="padding-right: 7%;">
+                                        <span style="font-family: DB-Helvethaica-X-55-Regular;">โทร</span>
+                                        <span>081-234-5678</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="right-block-right-box">
+                            <table width="100%" style="font-size: 1.15em">
+                                <tr>
+                                    <td rowspan="2" style="vertical-align:top; text-align: center;">
+                                        <div class="rounded-btn">บ้านที่ 1</div>
+                                    </td>
+                                    <td>คุณ</td>
+                                    <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left;">
+                                        เด่นดวง
+                                    </td>
+                                    <td>โทร</td>
+                                    <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left;">
+                                        081-234-5678
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left;">ฟีดแบ็ค</td>
+                                    <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left; color: #828282">
+                                        - ยังไม่มีข้อมูล-
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td colspan="4">
+                                        <div style="border: 0.8px solid #D9D9D9;margin: 10px 0;"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2" style="vertical-align:top; text-align: center;">
+                                        <div class="rounded-btn">บ้านที่ 2</div>
+                                    </td>
+                                    <td>คุณ</td>
+                                    <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left;">
+                                        เด่นจัง
+                                    </td>
+                                    <td>โทร</td>
+                                    <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left;">
+                                        081-234-5678
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left; vertical-align:top;">ฟีดแบ็ค</td>
+                                    <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left;">
+                                        <div>
+                                            <img src="./assets/icon/rate.png" alt="rate" width="20px" height="20px" />
+                                            <img src="./assets/icon/rate.png" alt="rate" width="20px" height="20px" />
+                                            <img src="./assets/icon/rate.png" alt="rate" width="20px" height="20px" />
+                                            <img src="./assets/icon/rate.png" alt="rate" width="20px" height="20px" />
+                                            <img src="./assets/icon/no-rate.png" alt="rate" width="20px" height="20px" />
+                                        </div>
+                                        <div>คนขับพูดจาสุภาพมาก ของส่งไวมากค่ะ <br/> ชอบมาก อยากซื้อ CP กินทุกวัน</div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="view-all">
+                        <div>
+                            <span style="margin-right: 5px;">ดูทั้งหมด</span>
+                            <span>
+                                <i class="arrow down"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="right-block">
                     <div style="font-size: 1.3em;">ออเดอร์ทั้งหมด</div>
                     <div class="right-box">
                         <table width="100%" style="font-size: 1.15em">
@@ -269,40 +439,178 @@
                             </span>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
-            <div class="save">
+            <!-- <div class="save">
                 <div class="save-change">บันทึกการเปลี่ยนแปลง</div>
+            </div> -->
+        </div>
+        <div id="message-modal" class="modal">
+            <div class="modal-title">
+                <img src="./assets/icon/dial.png" alt="dial" class="dial">
+                <span>นายศุภชัย ยอดชาย</span>
+                <a href="#" rel="modal:close" class="close-btn">X</a>
             </div>
+            <img src="./assets/image/message.PNG" alt="message" class="message-modal">
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script type="text/javascript" src="./script/trackingDetail.js"></script>
     <script>
-        function initMap() {
-            var bangkok = {lat: 13.75, lng: 100.51}
-            var map = new google.maps.Map(
-                document.getElementById('small-map'), {zoom: 14, center: bangkok}
-            );
-            // var marker = new google.maps.Marker({position: bangkok, map: map});
-            var labels = '123456789';
-            var markers = locations.map(function(location, i) {
-                return new google.maps.Marker({
-                    position: location,
-                    label: labels[i % labels.length]
-                }); 
-            });
-            var markerCluster = new MarkerClusterer(map, markers,
-            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+        mapboxgl.accessToken =
+            'pk.eyJ1Ijoicmluc2FtYSIsImEiOiJja2N2aW5mZ2IwNG5jMnNtZjkxb2RnbzQ3In0.SnLkzy41ZujeeVxauIoWhQ';
+        var map = new mapboxgl.Map({
+            container: 'small-map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [100.515, 13.7521],
+            zoom: 13
+        })
+        var locations = {
+            "type": "FeatureCollection",
+            "features": [{
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [100.50, 13.75]
+                },
+                "properties": {
+                    "title": "1"
+                }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [100.51, 13.747]
+                }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [100.531746, 13.751809]
+                }
+            }]
         }
-        var locations = [
-            {lat: 13.75, lng:100.50},
-            {lat: 13.76, lng:100.53},
-            {lat: 13.747, lng: 100.51},
-            {lat: 13.74, lng: 100.49}
-        ]
+        locations.features.forEach(function (marker) {
+            var el = document.createElement('div');
+            el.className = 'marker';
+            new mapboxgl.Marker(el).setLngLat(marker.geometry.coordinates)
+                .addTo(map);
+        })
+        var cpfreshmart = {
+            "type": "FeatureCollection",
+            "features": [{
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [100.501472, 13.755194]
+                }
+            }]
+        }
+        cpfreshmart.features.forEach(function (marker) {
+            var el = document.createElement('div');
+            el.className = 'marker-cp';
+            new mapboxgl.Marker(el).setLngLat(marker.geometry.coordinates)
+                .addTo(map);
+        })
+        map.on('load', () => {
+            map.addSource('route', {
+                'type': 'geojson',
+                'data': {
+                    'type': 'Feature',
+                    'properties': {},
+                    'geometry': {
+                        'type': 'LineString',
+                        'coordinates': [
+                            [100.50, 13.75],
+                            [100.500464, 13.751727],
+                            [100.501547, 13.751649],
+                            [100.502030, 13.752019],
+                            [100.502186, 13.753261],
+                            [100.504652, 13.752713],
+                            [100.503778, 13.749218],
+                            [100.510002, 13.747007]
+                        ]
+                    }
+                }
+            });
+            map.addLayer({
+                'id': 'route',
+                'type': 'line',
+                'source': 'route',
+                'layout': {
+                    'line-join': 'round',
+                    'line-cap': 'round'
+                },
+                'paint': {
+                    'line-color': '#0080ff',
+                    'line-width': 4
+                }
+            });
+            map.addSource('route2', {
+                'type': 'geojson',
+                'data': {
+                    'type': 'Feature',
+                    'properties': {},
+                    'geometry': {
+                        'type': 'LineString',
+                        'coordinates': [
+                            [100.51, 13.747],
+                            [100.516114, 13.745614],
+                            [100.516724, 13.749098],
+                            [100.530774, 13.746170], 
+                            [100.531746, 13.751809]
+                        ]
+                    }
+                }
+            });
+            map.addLayer({
+                'id': 'route2',
+                'type': 'line',
+                'source': 'route2',
+                'layout': {
+                    'line-join': 'round',
+                    'line-cap': 'round'
+                },
+                'paint': {
+                    'line-color': '#0080ff',
+                    'line-width': 4
+                }
+            });
+            map.addSource('route3', {
+                'type': 'geojson',
+                'data': {
+                    'type': 'Feature',
+                    'properties': {},
+                    'geometry': {
+                        'type': 'LineString',
+                        'coordinates': [
+                            [100.501472, 13.755194],
+                            [100.501020, 13.752664],
+                            [100.499920, 13.752653],
+                            [100.499908, 13.751679],
+                            [100.500462, 13.751737],
+                            [100.50, 13.75]
+                        ]
+                    }
+                }
+            });
+            map.addLayer({
+                'id': 'route3',
+                'type': 'line',
+                'source': 'route3',
+                'layout': {
+                    'line-join': 'round',
+                    'line-cap': 'round'
+                },
+                'paint': {
+                    'line-color': '#0080ff',
+                    'line-width': 4
+                }
+            });
+        })
     </script>
-    <script src="./script/markerclusterer.js" type="text/javascript"></script>    
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAy3o3AvCwmaDdzs3oHidU1wWP8o4dWBCU&callback=initMap&v=3.exp"></script>
-</body>
+    </body>
 </html>
