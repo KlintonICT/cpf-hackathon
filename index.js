@@ -3,7 +3,7 @@ const express = require('express')
 
 const app = express()
 
-const DEFAULT_PORT = 3000 || process.env.PORT
+const DEFAULT_PORT = 3000 || process.env.port || process.env.PORT
 
 app.use(express.static('dist'))
 
