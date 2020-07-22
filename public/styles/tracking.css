@@ -1,0 +1,146 @@
+.title-tracking{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-end;
+}
+.title{
+    font-size: 2em;
+}
+
+.title-date{
+    font-size: 2.5em;
+    font-family: DB-Helvethaica-X-55-Regular;
+}
+.map-status{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.map-cluster{
+    width: 69%;
+    /* height: 400px; */
+}
+.delivery-group{
+    background-color: white;
+    width: 25%;
+    height: 0%;
+    padding: 2%;
+    border-radius: 15px;
+    border: 0.5px solid rgb(220,220,220);
+}
+
+.delivery-group-title{
+    font-size:1.5em;
+    margin-bottom: 5px;
+}
+
+.group-item{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: DB-Helvethaica-X-55-Regular;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+.group-logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.processing-text{
+    color: #F59025;
+}
+.arrow{
+    padding: 3px;
+}
+table{
+    margin-bottom: 5%;
+    border-collapse: separate; 
+    border-spacing: 0 7px; 
+}
+th{
+    color: #939393;
+    font-size: 1.4em;
+}
+td a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-family: DB-Helvethaica-X-55-Regular;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 1.2em;
+}
+.column {
+    border: solid 1px rgb(220,220,220);
+    border-style: solid none;
+    background-color: white;
+}
+
+.column.active {
+    background-color:rgb(240,128,128, 0.3);
+}
+
+.column:first-child {
+    border-left-style: solid;
+    border-top-left-radius: 12px; 
+    border-bottom-left-radius: 12px;
+}
+
+.column:last-child {
+    border-right-style: solid;
+    border-bottom-right-radius: 12px; 
+    border-top-right-radius: 12px; 
+}
+
+.group-logo-status{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-road{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.road{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.road-line{
+    border-bottom: 1px solid #939393;
+    margin-top: -5px;
+    width: 98%;
+    opacity: 0.5;
+    margin-left: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
+
+.status-arrow .arrow{
+    padding: 5px;
+}
+
+#big-map {
+    width: 69%;
+    height: 500px;
+    /* float: left;
+    margin-top: 1.7em; */
+    background-color: gray;
+    border-radius: 15px;
+}

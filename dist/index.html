@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Orders</title>
+    <link rel="icon" href="./assets/image/cpf-logo.png" />
+    <link rel="stylesheet" type="text/css" href="./utils/globalStyle.css" />
+    <link rel="stylesheet" type="text/css" href="./utils/arrow.css" />
+    <link rel="stylesheet" type="text/css" href="./utils/button.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/orders.css" />
+</head>
+<body>
+    <div class="outside-container">
+        <!------------- menu side ---------------->
+        <div class="menu-side">
+            <div class="menu-list">
+                <div class="menu-list-container">
+                    <a class="menu-list-item active" href="#"></a>
+                    <span class="menu-list-title">Orders</span>
+                </div>
+                <div class="menu-list-container">
+                    <a class="menu-list-item" href="./tracking.html"></a>
+                    <span class="menu-list-title">Tracking</span>
+                </div>
+                <div class="menu-list-container">
+                    <a class="menu-list-item" href="./report.html"></a>
+                    <span class="menu-list-title">Report</span>
+                </div>
+                <div class="menu-list-container">
+                    <a class="menu-list-item" href="#"></a>
+                    <span class="menu-list-title">none</span>
+                </div>
+            </div>
+            <div class="profile">
+                <img src="./assets/image/profile.jpg" attr="profile" width="38px" height="38px" class="profile"/>
+            </div>
+        </div>
+        <!------------- content side ---------------->
+        <div class="container">
+            <div class="title-order">
+                <span class="title" id="title-date">3 พ.ค. 2563</span>
+                <span class="title-date" id="title-date-time">12:30:20 น.</span>
+            </div>
+            <div class="summary-order-block">
+                <div class="summary-box">
+                    <div class="summary-text">
+                        <img src="./assets/icon/briefcase.png" alt="briefcase" width="25px" height="25px" />
+                        <span>จำนวนออเดอร์ทั้งหมด</span>
+                    </div>
+                    <div class="summary-number">101</div>
+                </div>
+                <div class="summary-box">
+                    <div class="summary-text">
+                        <img src="./assets/icon/briefcase.png" alt="briefcase" width="25px" height="25px" />
+                        <span>ออเดอร์รอการจัดส่ง</span>
+                    </div>
+                    <div class="summary-number">30</div>
+                </div>
+                <div class="summary-box">
+                    <div class="summary-text">
+                        <img src="./assets/icon/briefcase.png" alt="briefcase" width="25px" height="25px" />
+                        <span>ออเดอร์ที่กำลังจัดส่ง</span>
+                    </div>
+                    <div class="summary-number">2</div>
+                </div>
+                <div class="summary-box">
+                    <div class="summary-text">
+                        <img src="./assets/icon/briefcase.png" alt="briefcase" width="25px" height="25px" />
+                        <span>ออเดอร์ที่จัดส่งเสร็จแล้ว</span>
+                    </div>
+                    <div class="summary-number">10</div>
+                </div>
+            </div>
+            <div style="font-size: 1.5em;">ออเดอร์ที่เข้ามา</div>
+            <div class="button-part">
+                <div class="rounded-btn active" id="map-btn" style="margin-right:20px">รูปแบบแผนที่</div>
+                <div class="rounded-btn" id="order-list-btn">รูปแบบรายการ</div>
+            </div>
+            <div class="map-status">
+                <div class="button-trigger">
+                    <!-- <img src="./assets/image/map-cluster.png" id="map-cluster" attr="map-cluster" class="map-cluster"/> -->
+                    <div id="big-map"></div>
+                    <div class="list-of-order" id="list-of-order">
+                        <table width="100%" cellspacing="0">
+                            <tr>
+                                <th>ลูกค้า</th>
+                                <th>วันที่</th>
+                                <th>เวลา</th>
+                                <th>เลขไปรษณีย์</th>
+                                <th>ที่อยู่</th>
+                                <th>กลุ่ม</th>
+                                <th>สถานะ</th>
+                            </tr>
+                            <tr>
+                                <td style="font-family: DB-Helvethaica-X-65-Med;">
+                                    <a href="./orderDetail.html">คุณเด่นดวง</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">12/03/20</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">11:30</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">73190</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">หมู่บ้านดวงฤทัย 234/3 แขวงแสนแสบ...</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">
+                                        <img src="./assets/icon/red-location.png" alt="loc" width="15px" height="15px" style="margin-bottom: -3px;"/>
+                                        <span>A</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="./orderDetail.html">รอการจัดส่ง</a>
+                                </td>
+                                <td class="larg-arrow">
+                                    <a href="#"><i class="arrow right"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-family: DB-Helvethaica-X-65-Med;">
+                                    <a href="./orderDetail.html">คุณเด่นดวง</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">12/03/20</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">11:30</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">73190</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">หมู่บ้านดวงฤทัย 234/3 แขวงแสนแสบ...</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">
+                                        <img src="./assets/icon/red-location.png" alt="loc" width="15px" height="15px" style="margin-bottom: -3px;"/>
+                                        <span>A</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="./orderDetail.html">รอการจัดส่ง</a>
+                                </td>
+                                <td class="larg-arrow">
+                                    <a href="#"><i class="arrow right"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-family: DB-Helvethaica-X-65-Med;">
+                                    <a href="./orderDetail.html">คุณเด่นดวง</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">12/03/20</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">11:30</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">73190</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">หมู่บ้านดวงฤทัย 234/3 แขวงแสนแสบ...</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">
+                                        <img src="./assets/icon/red-location.png" alt="loc" width="15px" height="15px" style="margin-bottom: -3px;"/>
+                                        <span>A</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="./orderDetail.html">รอการจัดส่ง</a>
+                                </td>
+                                <td class="larg-arrow">
+                                    <a href="#"><i class="arrow right"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-family: DB-Helvethaica-X-65-Med;">
+                                    <a href="./orderDetail.html">คุณเด่นดวง</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">12/03/20</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">11:30</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">73190</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">หมู่บ้านดวงฤทัย 234/3 แขวงแสนแสบ...</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">
+                                        <img src="./assets/icon/red-location.png" alt="loc" width="15px" height="15px" style="margin-bottom: -3px;"/>
+                                        <span>A</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="./orderDetail.html">รอการจัดส่ง</a>
+                                </td>
+                                <td class="larg-arrow">
+                                    <a href="#"><i class="arrow right"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-family: DB-Helvethaica-X-65-Med;">
+                                    <a href="./orderDetail.html">คุณเด่นดวง</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">12/03/20</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">11:30</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">73190</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">หมู่บ้านดวงฤทัย 234/3 แขวงแสนแสบ...</a>
+                                </td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <a href="./orderDetail.html">
+                                        <img src="./assets/icon/red-location.png" alt="loc" width="15px" height="15px" style="margin-bottom: -3px;"/>
+                                        <span>A</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="./orderDetail.html">รอการจัดส่ง</a>
+                                </td>
+                                <td class="larg-arrow">
+                                    <a href="#"><i class="arrow right"></i></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="delivery-group">
+                    <div class="delivery-group-title">สถานะการจัดส่ง</div>
+                    <div class="delivery-group-item">
+                        <a href="./orderDetail.html" class="group-item">
+                            <div class="group-logo">
+                                <img src="./assets/icon/red-location.png" attr="location" width="15px" height="15px" style="margin-right: 10px;"/>
+                                <span>กลุ่ม A</span>
+                            </div>
+                            <span class="processing-text">รอการจัดส่ง</span>
+                            <div><i class="arrow right"></i></div>
+                        </a>
+                        <a href="#" class="group-item">
+                            <div class="group-logo">
+                                <img src="./assets/icon/blue-location.png" attr="location" width="15px" height="15px" style="margin-right: 10px;"/>
+                                <span>กลุ่ม B</span>
+                            </div>
+                            <span class="processing-text">รอการจัดส่ง</span>
+                            <div><i class="arrow right"></i></div>
+                        </a>
+                        <a href="#" class="group-item">
+                            <div class="group-logo">
+                                <img src="./assets/icon/oragne-location.png" attr="location" width="15px" height="15px" style="margin-right: 10px;"/>
+                                <span>กลุ่ม C</span>
+                            </div>
+                            <span style="color: #D9D9D9">รอการยืนยันเส้นทาง</span>
+                            <div><i class="arrow right"></i></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./script/orders.js"></script>
+    <script>
+        function initMap() {
+            var bangkok = {lat: 13.75, lng: 100.51}
+            var map = new google.maps.Map(
+                document.getElementById('big-map'), {zoom: 14, center: bangkok}
+            );
+            // var marker = new google.maps.Marker({position: bangkok, map: map});
+            var labels = '123456789';
+            var markers = locations.map(function(location, i) {
+                return new google.maps.Marker({
+                    position: location,
+                    label: labels[i % labels.length]
+                }); 
+            });
+            var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+        }
+        var locations = [
+            {lat: 13.75, lng:100.50},
+            {lat: 13.76, lng:100.53},
+            {lat: 13.747, lng: 100.51},
+            {lat: 13.74, lng: 100.49}
+        ]
+    </script>
+    <script src="./script/markerclusterer.js" type="text/javascript"></script>    
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAy3o3AvCwmaDdzs3oHidU1wWP8o4dWBCU&callback=initMap&v=3.exp"></script>
+</body>
+</html>

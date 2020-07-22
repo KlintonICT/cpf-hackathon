@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tracking</title>
+    <link rel="icon" href="./assets/image/cpf-logo.png" />
+    <link rel="stylesheet" type="text/css" href="./utils/globalStyle.css" />
+    <link rel="stylesheet" type="text/css" href="./utils/arrow.css" />
+    <link rel="stylesheet" type="text/css" href="./utils/button.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/tracking.css" />
+</head>
+<body>
+    <div class="outside-container">
+        <!------------- menu side ---------------->
+        <div class="menu-side">
+            <div class="menu-list">
+                <div class="menu-list-container">
+                    <a class="menu-list-item" href="./orders.html"></a>
+                    <span class="menu-list-title">Orders</span>
+                </div>
+                <div class="menu-list-container">
+                    <a class="menu-list-item active" href="#"></a>
+                    <span class="menu-list-title">Tracking</span>
+                </div>
+                <div class="menu-list-container">
+                    <a class="menu-list-item" href="./report.html"></a>
+                    <span class="menu-list-title">Report</span>
+                </div>
+                <div class="menu-list-container">
+                    <a class="menu-list-item" href="#"></a>
+                    <span class="menu-list-title">none</span>
+                </div>
+            </div>
+            <div class="profile">
+                <img src="./assets/image/profile.jpg" attr="profile" width="38px" height="38px" class="profile"/>
+            </div>
+        </div>
+        <!------------- content side ---------------->
+        <div class="container">
+            <div class="title-tracking">
+                <span class="title">ระบบติดตามการขนส่ง</span>
+                <span class="title-date" id="title-date-time">17:10:14 น.</span>
+            </div>
+            <div class="map-status">
+                <!-- <img src="./assets/image/map-cluster.png" attr="map-cluster" class="map-cluster"/> -->
+                <div id="big-map"></div>
+                <div class="delivery-group">
+                    <div class="delivery-group-title">สถานะการจัดส่ง</div>
+                    <div class="delivery-group-item">
+                        <a href="./trackingDetail.html" class="group-item">
+                            <div class="group-logo">
+                                <img src="./assets/icon/red-location.png" attr="location" width="15px" height="15px" style="margin-right: 10px;"/>
+                                <span>กลุ่ม A</span>
+                            </div>
+                            <span class="processing-text">กำลังจัดส่ง</span>
+                            <div><i class="arrow right"></i></div>
+                        </a>
+                        <a href="#" class="group-item">
+                            <div class="group-logo">
+                                <img src="./assets/icon/blue-location.png" attr="location" width="15px" height="15px" style="margin-right: 10px;"/>
+                                <span>กลุ่ม B</span>
+                            </div>
+                            <span class="processing-text">กำลังจัดส่ง</span>
+                            <div><i class="arrow right"></i></div>
+                        </a>
+                        <a href="#" class="group-item">
+                            <div class="group-logo">
+                                <img src="./assets/icon/oragne-location.png" attr="location" width="15px" height="15px" style="margin-right: 10px;"/>
+                                <span>กลุ่ม C</span>
+                            </div>
+                            <span class="processing-text">กำลังจัดส่ง</span>
+                            <div><i class="arrow right"></i></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div style="font-size:1.4em; margin-top:10px; margin-bottom: 10px;">
+                ความคืบหน้าในการจัดส่ง
+            </div>
+            <table style="width:100%">
+                <tr>
+                    <th>กลุ่ม</th>
+                    <th>คนขับ</th>
+                    <th>เวลาเริ่ม</th>
+                    <th>สถานะล่าสุด</th>
+                    <th>Status</th>
+                </tr>
+                <tr class="body-row">
+                    <td class="column active">
+                        <a href="./trackingDetail.html">
+                            <div class="group-logo-status">
+                                <img src="./assets/icon/red-location.png" attr="location" width="15px" height="15px" style="margin-right: 10px;"/>
+                                <span>กลุ่ม A</span>
+                            </div>
+                        </a>
+                    </td>
+                    <td class="column active"><a href="./trackingDetail.html">นายศุภชัย ยอดชาย</a></td>
+                    <td class="column active"><a href="./trackingDetail.html">16:00</a></td>
+                    <td class="column active"><a href="./trackingDetail.html" style="color:red;">ล่าช้า 10 นาที</a></td>
+                    <td class="column active" style="width: 50%">
+                        <a href="./trackingDetail.html" class="status-road">
+                            <div style="width:70%">
+                                <div class="road">
+                                    <img src="./assets/icon/shop.png" attr="shop" width="20px" height="20px">
+                                    <img src="./assets/icon/red-location.png" attr="loc" width="15px" height="15px" style="margin-left: 5%;margin-right: 5%;">
+                                    <img src="./assets/icon/red-location.png" attr="loc" width="15px" height="15px">
+                                    <span style="color:red; font-size: 1.8em;margin-left: 6%;margin-right: 6%;">!</span>
+                                    <img src="./assets/icon/grey-location.png" attr="loc" width="15px" height="15px">
+                                    <img src="./assets/icon/grey-location.png" attr="loc" width="15px" height="15px" style="margin-left: 10%;margin-right: 2%;">
+                                    <img src="./assets/icon/grey-location.png" attr="loc" width="15px" height="15px">
+                                    <img src="./assets/icon/grey-location.png" attr="loc" width="15px" height="15px" style="margin-left: 10%;margin-right: 5%;">
+                                    <img src="./assets/icon/grey-location.png" attr="loc" width="15px" height="15px" style="margin-right: 9%;">
+                                    <img src="./assets/icon/shop.png" attr="shop" width="20px" height="20px" >
+                                </div>
+                                <div class="road-line"></div>
+                            </div>
+                            <div class="status-arrow"><i class="arrow right"></i></div>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="body-row">
+                    <td class="column">
+                        <a href="#">
+                            <div class="group-logo-status">
+                                <img src="./assets/icon/blue-location.png" attr="location" width="15px" height="15px" style="margin-right: 10px;"/>
+                                <span>กลุ่ม B</span>
+                            </div>
+                        </a>
+                    </td>
+                    <td class="column"><a href="#">นายศุภชัย ยอดหญิง</a></td>
+                    <td class="column"><a href="#">16:00</a></td>
+                    <td class="column"><a href="#" style="color:#008140;">เร็วกว่า 10 นาที</a></td>
+                    <td class="column" style="width: 50%">
+                        <a href="#" class="status-road">
+                            <div style="width:70%">
+                                <div class="road">
+                                    <img src="./assets/icon/shop.png" attr="shop" width="20px" height="20px">
+                                    <img src="./assets/icon/blue-location.png" attr="loc" width="15px" height="15px" style="margin-left: 5%;margin-right: 5%;">
+                                    <img src="./assets/icon/blue-location.png" attr="loc" width="15px" height="15px">
+                                    <span style="color:white; font-size: 1.8em;">!</span>
+                                    <img src="./assets/icon/blue-location.png" attr="loc" width="15px" height="15px" style="margin-left: 6%;margin-right: 6%;">
+                                    <img src="./assets/icon/blue-location.png" attr="loc" width="15px" height="15px">
+                                    <img src="./assets/icon/grey-location.png" attr="loc" width="15px" height="15px" style="margin-left: 9%;margin-right: 2%;">
+                                    <img src="./assets/icon/grey-location.png" attr="loc" width="15px" height="15px">
+                                    <img src="./assets/icon/grey-location.png" attr="loc" width="15px" height="15px" style="margin-left: 7%;margin-right: 5%;">
+                                    <img src="./assets/icon/grey-location.png" attr="loc" width="15px" height="15px" style="margin-right: 9%;">
+                                    <img src="./assets/icon/shop.png" attr="shop" width="20px" height="20px" >
+                                </div>
+                                <div class="road-line""></div>
+                            </div>
+                            <div class="status-arrow"><i class="arrow right"></i></div>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="body-row">
+                    <td class="column">
+                        <a href="#">
+                            <div class="group-logo-status">
+                                <img src="./assets/icon/oragne-location.png" attr="location" width="15px" height="15px" style="margin-right: 10px;"/>
+                                <span>กลุ่ม C</span>
+                            </div>
+                        </a>
+                    </td>
+                    <td class="column"><a href="#">นายศุภชัย ยอดหญ้า</a></td>
+                    <td class="column"><a href="#">16:00</a></td>
+                    <td class="column"><a href="#" style="color: orange">ปกติ</a></td>
+                    <td class="column" style="width: 50%">
+                        <a href="#" class="status-road">
+                            <div style="width:70%">
+                                <div class="road">
+                                    <img src="./assets/icon/shop.png" attr="shop" width="20px" height="20px">
+                                    <img src="./assets/icon/oragne-location.png" attr="loc" width="15px" height="15px" style="margin-left: 5%;margin-right: 5%;">
+                                    <img src="./assets/icon/oragne-location.png" attr="loc" width="15px" height="15px">
+                                    <img src="./assets/icon/oragne-location.png" attr="loc" width="15px" height="15px">
+                                    <span style="color:white; font-size: 1.8em;">!</span>
+                                    <img src="./assets/icon/oragne-location.png" attr="loc" width="15px" height="15px">
+                                    <img src="./assets/icon/grey-location.png" attr="loc" width="15px" height="15px" style="margin-left: 10%;margin-right: 2%;">
+                                    <img src="./assets/icon/grey-location.png" attr="loc" width="15px" height="15px">
+                                    <img src="./assets/icon/grey-location.png" attr="loc" width="15px" height="15px" style="margin-left: 4%;margin-right: 5%;">
+                                    <img src="./assets/icon/grey-location.png" attr="loc" width="15px" height="15px" style="margin-left: 10%;">
+                                    <img src="./assets/icon/grey-location.png" attr="loc" width="15px" height="15px" style="margin-right: 9%;">
+                                    <img src="./assets/icon/shop.png" attr="shop" width="20px" height="20px" >
+                                </div>
+                                <div class="road-line"></div>
+                            </div>
+                            <div class="status-arrow"><i class="arrow right"></i></div>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./script/tracking.js"></script>
+    <script>
+        function initMap() {
+            var bangkok = {lat: 13.745, lng:100.51}
+            var map = new google.maps.Map(
+                document.getElementById('big-map'), {zoom: 14, center: bangkok}
+            );
+            // var marker = new google.maps.Marker({position: bangkok, map: map});
+            var labels = '123456789';
+            var markers = locations.map(function(location, i) {
+                return new google.maps.Marker({
+                    position: location,
+                    label: labels[i % labels.length]
+                }); 
+            });
+            var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+        }
+        var locations = [
+            {lat: 13.75, lng:100.50},
+            {lat: 13.76, lng:100.53},
+            {lat: 13.747, lng: 100.51},
+            {lat: 13.74, lng: 100.49}
+        ]
+    </script>
+    <script src="./script/markerclusterer.js" type="text/javascript"></script>    
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAy3o3AvCwmaDdzs3oHidU1wWP8o4dWBCU&callback=initMap&v=3.exp"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+@font-face{
+    font-family: DB-Helvethaica-X-75Bd;
+    src: url('../assets/font/DB Helvethaica X Bd v3.2.ttf');
+}
+
+@font-face{
+    font-family: DB-Helvethaica-X-55-Regular;
+    src: url('../assets/font/DB Helvethaica X v3.2.ttf');
+}
+
+@font-face{
+    font-family: DB-Helvethaica-X-65-Med;
+    src: url('../assets/font/DB Helvethaica X Med v3.2.ttf');
+}
+
+@font-face{
+    font-family: DB-Helvethaica-X-85Blk;
+    src: url('../assets/font/DB Helvethaica X Blk v3.2.ttf');
+}
+
+body {
+    padding: 0;
+    margin: auto;
+    font-family: DB-Helvethaica-X-75Bd;
+    background-color: #F6F7FB;
+}
+
+.outside-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.menu-side{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    -webkit-box-shadow: 10px 5px 43px -30px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 5px 43px -30px rgba(0,0,0,0.75);
+    box-shadow: 10px 5px 43px -30px rgba(0,0,0,0.75);
+}
+
+.menu-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.menu-list-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.menu-list-item{
+    border-radius: 19px;
+    height: 38px;
+    width: 38px;
+    background-color: #C4C4C4;
+}
+
+.menu-list-item.active{
+    background-color: #008140;
+    cursor: pointer;
+}
+
+.profile{
+    border-radius: 19px;
+    margin-bottom: 20%;
+}
+
+.container{
+    padding-top: 30px;
+    padding-left: 35px;
+    padding-right: 35px;
+    width: 100%;
+}
