@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Report</title>
+    <link rel="icon" href="./assets/image/cpf-logo.png" />
+    <link rel="stylesheet" type="text/css" href="./utils/globalStyle.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/driver.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+</head>
+<body>
+    <div class="outside-container">
+        <!------------- menu side ---------------->
+        <div class="menu-side">
+            <div class="menu-list">
+                <div class="menu-list-container">
+                    <a class="menu-list-item" href="./index.html"></a>
+                    <span class="menu-list-title">Orders</span>
+                </div>
+                <div class="menu-list-container">
+                    <a class="menu-list-item" href="./tracking.html"></a>
+                    <span class="menu-list-title">Tracking</span>
+                </div>
+                <div class="menu-list-container">
+                    <a class="menu-list-item" href="./report.html"></a>
+                    <span class="menu-list-title">Report</span>
+                </div>
+                <div class="menu-list-container">
+                    <a class="menu-list-item active" href="#"></a>
+                    <span class="menu-list-title">Driver</span>
+                </div>
+            </div>
+            <div class="profile">
+                <img src="./assets/image/profile.jpg" attr="profile" width="38px" height="38px" class="profile"/>
+            </div>
+        </div>
+        <!------------- content side ---------------->
+        <div class="container">
+            <div class="title-report">
+                <span class="title">สรุปออเดอร์ทั้งหมด</span>
+                <div class="title-date">
+                    <div class="select-cotainer">
+                        <select id="branch" name="branch" class="branch">
+                            <option value="สาขา ลาดกระบัง">สาขา ลาดกระบัง</option>
+                            <option value="สาขา สยาม">สาขา สยาม</option>
+                            <option value="สาขา อนุสาวรีย์ประชาธิป.." selected>สาขา อนุสาวรีย์ประชาธิป..</option>
+                            <option value="สาขา ประตูน้ำ">สาขา ประตูน้ำ</option>
+                            <option value="สาขา ประตูน้ำ">สาขา ศาลายา</option>
+                        </select>
+                    </div>
+                    <input type="text" name="daterange" value="01/01/2018 - 01/15/2018" class="daterange" id="daterange"/>
+                </div>
+            </div>
+
+            <div class="list-of-driver">
+                <table width="100%" cellspacing="0">
+                    <tr>
+                        <th>อันดับ</th>
+                        <th>ชื่อคนขับ</th>
+                        <th>ยอดรวมเที่ยว</th>
+                        <th>ยอดออเดอร์ทั้งหมด(฿)</th>
+                        <th>เรตติ้ง</th>
+                        <th>พื้นที่ขับ</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./driverDetail.html">1</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html" class="profile-block">
+                                <img src="./assets/image/driver.jpg" alt="sdfsdf" class="driver-profile">
+                                <span>คุณศุภชัย ยอดชาย</span>
+                            </a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">54</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">2,305</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">4.5</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">ลาดกระบัง
+                            </a>
+                        </td>
+                        <td class="larg-arrow">
+                            <a href="#"><i class="arrow-right"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./driverDetail.html">2</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html" class="profile-block">
+                                <img src="./assets/image/driver.jpg" alt="sdfsdf" class="driver-profile">
+                                <span>นายศุภชัย ยอดหญิง</span>
+                            </a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">54</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">2,305</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">4.5</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">ลาดกระบัง
+                            </a>
+                        </td>
+                        <td class="larg-arrow">
+                            <a href="#"><i class="arrow-right"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./driverDetail.html">3</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html" class="profile-block">
+                                <img src="./assets/image/driver.jpg" alt="sdfsdf" class="driver-profile">
+                                <span>นายศุภชัย ยอดหญ้า</span>
+                            </a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">54</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">2,305</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">4.5</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">ลาดกระบัง
+                            </a>
+                        </td>
+                        <td class="larg-arrow">
+                            <a href="#"><i class="arrow-right"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./driverDetail.html">4</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html" class="profile-block">
+                                <img src="./assets/image/driver2.jpg" alt="sdfsdf" class="driver-profile">
+                                <span>นายสบาย มาดี</span>
+                            </a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">54</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">2,305</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">4.5</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">ลาดกระบัง
+                            </a>
+                        </td>
+                        <td class="larg-arrow">
+                            <a href="#"><i class="arrow-right"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./driverDetail.html">5</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html" class="profile-block">
+                                <img src="./assets/image/driver3.jpg" alt="sdfsdf" class="driver-profile">
+                                <span>นางสมใจ สุดใจ</span>
+                            </a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">54</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">2,305</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">4.5</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">ลาดกระบัง
+                            </a>
+                        </td>
+                        <td class="larg-arrow">
+                            <a href="#"><i class="arrow-right"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./driverDetail.html">6</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html" class="profile-block">
+                                <img src="./assets/image/driver4.jpg" alt="sdfsdf" class="driver-profile">
+                                <span>นายสงสันต์ วันสุข</span>
+                            </a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">54</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">2,305</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">4.5</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">ลาดกระบัง
+                            </a>
+                        </td>
+                        <td class="larg-arrow">
+                            <a href="#"><i class="arrow-right"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="./driverDetail.html">7</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html" class="profile-block">
+                                <img src="./assets/image/driver4.jpg" alt="sdfsdf" class="driver-profile">
+                                <span>นายสมร ไกรคุช</span>
+                            </a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">54</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">2,305</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">4.5</a>
+                        </td>
+                        <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                            <a href="./driverDetail.html">ลาดกระบัง
+                            </a>
+                        </td>
+                        <td class="larg-arrow">
+                            <a href="#"><i class="arrow-right"></i></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script type="text/javascript" src="./script/driver.js"></script>
+</body>
+</html>
