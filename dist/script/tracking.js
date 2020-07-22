@@ -1,4 +1,13 @@
 (() => {
+    const inivisbleBtn = () => {
+        $('#invisible-btn').on('click', () => {
+            for(let i = 1; i <= 5; i++){
+                $(`#active-column${i}`).addClass('active');
+            }
+            document.getElementById('urgent').style.color = 'red';
+        })
+    }
+
     const displayDate = () => {
         const now = new Date();
         let hours = now.getHours();
@@ -13,6 +22,7 @@
 
     const run = () => {
         displayDate();
+        inivisbleBtn();
     }
     run();
 })();

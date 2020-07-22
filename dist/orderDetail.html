@@ -11,10 +11,10 @@
     <link rel="stylesheet" type="text/css" href="./utils/button.css" />
     <link rel="stylesheet" type="text/css" href="./styles/trackingDetail.css" />
     <link rel="stylesheet" type="text/css" href="./styles/orderDetail.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <!-- jQuery Modal -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
 </head>
 <body>
     <div class="outside-container">
@@ -73,7 +73,7 @@
                     </div>
                     <div class="row-layout" style="margin-top: 1.3em;">
                         <div style="font-size: 1.3em">คนส่งสินค้า</div>
-                        <a href="#edit-driver-page" rel="modal:open">
+                        <a href="#edit-driver-page" id="open-modal">
                             <img src="./assets/icon/edit.png" alt="edit" class="edit-icon"/>
                         </a>
                     </div>
@@ -103,7 +103,7 @@
                         </tr>
                     </table>
                     <div style="font-size: 1.3em;margin-top: 3%;">อัพเดตจากคนส่งสินค้า</div>
-                    <div class="driver-update-container" style="text-align: center;">
+                    <div class="driver-update-container-order" style="text-align: center;">
                         <div class="preparing-order-text">
                             กำลังจัดเตรียมออเดอร์
                         </div>
@@ -323,44 +323,241 @@
                     </div>
                 </div>
             </div>
-            <div class="save">
+            <!-- <div class="save">
                 <div class="save-change">บันทึกการเปลี่ยนแปลง</div>
-            </div>
+            </div> -->
         </div>
         <!------------- edit driver -------------->
-        <!-- <div id="edit-driver-page" class="modal">
-            <p>Thanks for clicking. That felt good.</p>
-            <a href="#" rel="modal:close">Close</a>
-        </div> -->
+        <div id="edit-driver-page" class="modal">
+            <div class="modal-title">แก้ไขคนส่งสินค้า</div>
+            <div class="modal-body">
+                <div class="row-layout modal-item-container">
+                    <img src="./assets/image/driver.jpg" alt="driver" class="modal-image-driver">
+                    <div>
+                        <div>
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                        </div>
+                        <div class="modal-name">นายสมร ไกรคุช</div>
+                        <div class="modal-detail">อยู่ห่างจากบริเวณนี้ 0.5 กม.</div>
+                    </div>
+                    <div class="rounded-btn">เลือก</div>
+                </div>
+                <div class="divider" style="width: 90%; margin-left: 5%;"></div>
+                <div class="row-layout modal-item-container">
+                    <img src="./assets/image/driver2.jpg" alt="driver" class="modal-image-driver">
+                    <div>
+                        <div>
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/no-rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/no-rate.png" alt="rate" width="15px" height="15px" />
+                        </div>
+                        <div class="modal-name">นายสงสันต์ วันสุข</div>
+                        <div class="modal-detail">อยู่ห่างจากบริเวณนี้ 0.6 กม.</div>
+                    </div>
+                    <div class="rounded-btn">เลือก</div>
+                </div>
+                <div class="divider" style="width: 90%; margin-left: 5%;"></div>
+                <div class="row-layout modal-item-container">
+                    <img src="./assets/image/driver3.jpg" alt="driver" class="modal-image-driver">
+                    <div>
+                        <div>
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/no-rate.png" alt="rate" width="15px" height="15px" />
+                        </div>
+                        <div class="modal-name">นายสมรักษ์ สุดใจ</div>
+                        <div class="modal-detail">อยู่ห่างจากบริเวณนี้ 0.85 กม.</div>
+                    </div>
+                    <div class="rounded-btn">เลือก</div>
+                </div>
+                <div class="divider" style="width: 90%; margin-left: 5%;"></div>
+                <div class="row-layout modal-item-container">
+                    <img src="./assets/image/driver4.jpg" alt="driver" class="modal-image-driver">
+                    <div>
+                        <div>
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/rate.png" alt="rate" width="15px" height="15px" />
+                            <img src="./assets/icon/no-rate.png" alt="rate" width="15px" height="15px" />
+                        </div>
+                        <div class="modal-name">นายสบาย มาดี</div>
+                        <div class="modal-detail">อยู่ห่างจากบริเวณนี้ 1.2 กม.</div>
+                    </div>
+                    <div class="rounded-btn">เลือก</div>
+                </div>
+            </div>
+            <div class="row-layout modal-button-wrapper">
+                <a href="#" rel="modal:close" class="rectangele-btn">ปิด</a>
+                <a href="#" rel="modal:close" class="change-btn">บันทึกการเปลี่ยนแปลง</a>
+            </div>
+        </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script type="text/javascript" src="./script/orderDetail.js"></script>
     <script>
-        function initMap() {
-            var bangkok = {lat: 13.75, lng: 100.51}
-            var map = new google.maps.Map(
-                document.getElementById('small-map'), {zoom: 14, center: bangkok}
-            );
-            // var marker = new google.maps.Marker({position: bangkok, map: map});
-            var labels = '123456789';
-            var markers = locations.map(function(location, i) {
-                return new google.maps.Marker({
-                    position: location,
-                    label: labels[i % labels.length]
-                }); 
-            });
-            var markerCluster = new MarkerClusterer(map, markers,
-            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+        mapboxgl.accessToken =
+            'pk.eyJ1Ijoicmluc2FtYSIsImEiOiJja2N2aW5mZ2IwNG5jMnNtZjkxb2RnbzQ3In0.SnLkzy41ZujeeVxauIoWhQ';
+        var map = new mapboxgl.Map({
+            container: 'small-map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [100.515, 13.7521],
+            zoom: 13
+        })
+        var locations = {
+            "type": "FeatureCollection",
+            "features": [{
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [100.50, 13.75]
+                },
+                "properties": {
+                    "title": "1"
+                }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [100.51, 13.747]
+                }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [100.531746, 13.751809]
+                }
+            }]
         }
-        var locations = [
-            {lat: 13.75, lng:100.50},
-            {lat: 13.76, lng:100.53},
-            {lat: 13.747, lng: 100.51},
-            {lat: 13.74, lng: 100.49}
-        ]
+        locations.features.forEach(function (marker) {
+            var el = document.createElement('div');
+            el.className = 'marker';
+            new mapboxgl.Marker(el).setLngLat(marker.geometry.coordinates)
+                .addTo(map);
+        })
+        var cpfreshmart = {
+            "type": "FeatureCollection",
+            "features": [{
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [100.501472, 13.755194]
+                }
+            }]
+        }
+        cpfreshmart.features.forEach(function (marker) {
+            var el = document.createElement('div');
+            el.className = 'marker-cp';
+            new mapboxgl.Marker(el).setLngLat(marker.geometry.coordinates)
+                .addTo(map);
+        })
+        map.on('load', () => {
+            map.addSource('route', {
+                'type': 'geojson',
+                'data': {
+                    'type': 'Feature',
+                    'properties': {},
+                    'geometry': {
+                        'type': 'LineString',
+                        'coordinates': [
+                            [100.50, 13.75],
+                            [100.500464, 13.751727],
+                            [100.501547, 13.751649],
+                            [100.502030, 13.752019],
+                            [100.502186, 13.753261],
+                            [100.504652, 13.752713],
+                            [100.503778, 13.749218],
+                            [100.510002, 13.747007]
+                        ]
+                    }
+                }
+            });
+            map.addLayer({
+                'id': 'route',
+                'type': 'line',
+                'source': 'route',
+                'layout': {
+                    'line-join': 'round',
+                    'line-cap': 'round'
+                },
+                'paint': {
+                    'line-color': '#0080ff',
+                    'line-width': 4
+                }
+            });
+            map.addSource('route2', {
+                'type': 'geojson',
+                'data': {
+                    'type': 'Feature',
+                    'properties': {},
+                    'geometry': {
+                        'type': 'LineString',
+                        'coordinates': [
+                            [100.51, 13.747],
+                            [100.516114, 13.745614],
+                            [100.516724, 13.749098],
+                            [100.530774, 13.746170], 
+                            [100.531746, 13.751809]
+                        ]
+                    }
+                }
+            });
+            map.addLayer({
+                'id': 'route2',
+                'type': 'line',
+                'source': 'route2',
+                'layout': {
+                    'line-join': 'round',
+                    'line-cap': 'round'
+                },
+                'paint': {
+                    'line-color': '#0080ff',
+                    'line-width': 4
+                }
+            });
+            map.addSource('route3', {
+                'type': 'geojson',
+                'data': {
+                    'type': 'Feature',
+                    'properties': {},
+                    'geometry': {
+                        'type': 'LineString',
+                        'coordinates': [
+                            [100.501472, 13.755194],
+                            [100.501020, 13.752664],
+                            [100.499920, 13.752653],
+                            [100.499908, 13.751679],
+                            [100.500462, 13.751737],
+                            [100.50, 13.75]
+                        ]
+                    }
+                }
+            });
+            map.addLayer({
+                'id': 'route3',
+                'type': 'line',
+                'source': 'route3',
+                'layout': {
+                    'line-join': 'round',
+                    'line-cap': 'round'
+                },
+                'paint': {
+                    'line-color': '#0080ff',
+                    'line-width': 4
+                }
+            });
+        })
     </script>
-    <script src="./script/markerclusterer.js" type="text/javascript"></script>    
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAy3o3AvCwmaDdzs3oHidU1wWP8o4dWBCU&callback=initMap&v=3.exp"></script>
-</body>
+    </body>
 </html>

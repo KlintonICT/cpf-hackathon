@@ -1,122 +1,144 @@
-.title-order{
+.title-order {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
     align-items: flex-end;
 }
-.title{
+
+.title {
     font-size: 2.5em;
 }
 
-.title-date{
+.title-date {
     font-size: 3em;
     font-family: DB-Helvethaica-X-55-Regular;
 }
 
-.summary-order-block{
+.summary-order-block {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 20px 0;
 }
 
-.summary-box{
-    background-color:white;
+.summary-box {
+    background-color: white;
     border: 1px solid #D9D9D9;
     width: 20%;
     border-radius: 15px;
     padding: 10px;
 }
-.summary-text{
+
+.summary-text {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-size:1.2em;
+    font-size: 1.2em;
 }
 
-.summary-number{
-    font-size:2.5em;
+.summary-number {
+    font-size: 2.5em;
     text-align: right;
 }
-.button-part{
+
+.button-part {
     margin-top: 1%;
     margin-bottom: 1%;
     font-size: 1.1em;
 }
 
-.button-trigger{
+.button-trigger {
     display: flex;
     flex-direction: row;
 }
 
-.button-part > .rounded-btn:hover,
-.button-part > .rounded-btn:hover{
+.button-part>.rounded-btn:hover,
+.button-part>.rounded-btn:hover {
     background-color: #008140;
-    color:white;
+    color: white;
     cursor: pointer;
 }
 
-.map-status{
+.map-status {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 5%;
 }
-.button-trigger{
-    width:69%;
+
+.button-trigger {
+    width: 69%;
 }
-.map-cluster{
+
+.map-cluster {
     width: 100%;
     float: left;
     margin-top: 1.7em;
     /* height: 400px; */
 }
-.list-of-order{
+
+.list-of-order {
     float: right;
     width: 100%;
 }
+
 td {
     background: white;
-    border-bottom: 1px solid white; 
-    border-top: 1px solid white; 
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
     text-align: center;
 }
-th{
+
+th {
     color: #939393;
     font-size: 1.3em;
 }
-td a{
+
+td a {
     text-decoration: none;
     color: black;
     display: block;
     padding: 1em;
 }
-tr:nth-child(2) td:first-child { border-top-left-radius: 10px; }
-tr:nth-child(2) td:last-child { border-top-right-radius: 10px; }
-tr:last-child td:first-child { border-bottom-left-radius: 10px; }
-tr:last-child td:last-child { border-bottom-right-radius: 10px; }
 
-.larg-arrow .arrow{
+tr:nth-child(2) td:first-child {
+    border-top-left-radius: 10px;
+}
+
+tr:nth-child(2) td:last-child {
+    border-top-right-radius: 10px;
+}
+
+tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+.larg-arrow .arrow {
     border-color: #008140;
     padding: 5px;
 }
-.delivery-group{
+
+.delivery-group {
     background-color: white;
     width: 25%;
     height: 0%;
     padding: 2%;
     border-radius: 15px;
-    border: 0.5px solid rgb(220,220,220);
+    border: 0.5px solid rgb(220, 220, 220);
     margin-top: 1.7em;
 }
 
-.delivery-group-title{
-    font-size:1.5em;
+.delivery-group-title {
+    font-size: 1.5em;
     margin-bottom: 5px;
 }
 
-.group-item{
+.group-item {
     text-decoration: none;
     color: black;
     display: flex;
@@ -126,15 +148,18 @@ tr:last-child td:last-child { border-bottom-right-radius: 10px; }
     font-size: 1.1em;
     margin-top: 10px;
 }
-.group-logo{
+
+.group-logo {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.processing-text{
+
+.processing-text {
     color: #F12E2E;
 }
-.arrow{
+
+.arrow {
     padding: 3px;
 }
 
@@ -148,7 +173,7 @@ tr:last-child td:last-child { border-bottom-right-radius: 10px; }
 }
 
 .marker {
-    background-image: url('../../assets/icon/red-location.png');
+    background-image: url('../assets/icon/red-location.png');
     background-size: cover;
     width: 20px;
     height: 20px;
@@ -169,4 +194,12 @@ tr:last-child td:last-child { border-bottom-right-radius: 10px; }
 .divider{ 
     border: 0.7px solid #D9D9D9;
     margin: 15px 0;
+}
+
+.marker-cp {
+    background-image: url('../assets/icon/shop.png');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
