@@ -11,26 +11,13 @@
     <link rel="stylesheet" type="text/css" href="./utils/button.css" />
     <link rel="stylesheet" type="text/css" href="./styles/trackingDetail.css" />
     <link rel="stylesheet" type="text/css" href="./styles/orderDetail.css" />
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 </head>
 <body>
     <div class="outside-container">
-        <!------------- edit driver -------------->
-        <!-- <div id="edit-driver-page">
-            <div class="edit-driver-background">
-            </div>
-            <div class="edit-driver-modal">
-                <div class="title-bar">
-                    <p class="title-bar-text">แก้ไขคนส่งสินค้า</p>
-                </div>
-
-                <div class="modal-body">
-                    <div class="modal-item">
-                        <p>นายศุภชัย ยอดชาย</p>
-                    </div>
-                </div>
-            </div>
-        </div> -->
         <!------------- menu side ---------------->
         <div class="menu-side">
             <div class="menu-list">
@@ -57,7 +44,7 @@
         </div>
         <!------------- content side ---------------->
         <div class="container">
-            <a href="./orders.html" class="back-to-tracking">
+            <a href="./index.html" class="back-to-tracking">
                 <i class="arrow left"></i>
                 <span>ย้อนกลับ</span>
             </a>
@@ -72,7 +59,7 @@
                             <div>กลุ่ม A</div>
                             <img src="./assets/icon/red-location.png" alt="loc" width="25px" width="25px" style="margin-left: 20px;">
                         </div>
-                        <div style="font-family:DB-Helvethaica-X-55-Regular;color:#F12E2E; font-size: 1.3em">รอการจัดส่ง</div>
+                        <div style="font-family:DB-Helvethaica-X-55-Regular; font-size: 1.3em">กรุณายืนยันภายใน 3.40 นาที</div>
                     </div>
                     <div class="divider"></div>
                     <div style="font-size: 1.3em;">สรุปข้อมูล</div>
@@ -84,7 +71,12 @@
                         <div class="breif-text">จำนวนบ้านที่ต้องไปส่งทั้งหมด:</div>
                         <div>12 บ้าน</div>
                     </div>
-                    <div style="font-size: 1.3em;margin-top: 3%;">คนขับ</div>
+                    <div class="row-layout" style="margin-top: 1.3em;">
+                        <div style="font-size: 1.3em">คนส่งสินค้า</div>
+                        <a href="#edit-driver-page" rel="modal:open">
+                            <img src="./assets/icon/edit.png" alt="edit" class="edit-icon"/>
+                        </a>
+                    </div>
                     <table width="60%" style="font-size: 1.15em">
                         <tr>
                             <td rowspan="2" width="60px">
@@ -110,11 +102,12 @@
                             <td>081-234-5678</td>
                         </tr>
                     </table>
-                    <div style="font-size: 1.3em;margin-top: 3%;">อัพเดตจากคนขับ</div>
+                    <div style="font-size: 1.3em;margin-top: 3%;">อัพเดตจากคนส่งสินค้า</div>
                     <div class="driver-update-container" style="text-align: center;">
-                        <div style="font-family: DB-Helvethaica-X-55-Regular; font-size: 3em; color: #D9D9D9;">
+                        <div class="preparing-order-text">
                             กำลังจัดเตรียมออเดอร์
                         </div>
+                        <div class="rectangele-btn">กดเพื่อเริ่มจัดส่ง</div>
                     </div>
                 </div>
             </div>
@@ -125,25 +118,33 @@
                         <div>
                             <div class="road">
                                 <img src="./assets/icon/shop.png" attr="shop" width="25px" height="25px">
-                                <img src="./assets/icon/grey-location.png" attr="loc" width="20px" height="20px" style="margin-left: 5%;margin-right: 5%;">
-                                <img src="./assets/icon/grey-location.png" attr="loc" width="20px" height="20px">
+                                <img src="./assets/icon/red-location.png" attr="loc" width="20px" height="20px" style="margin-left: 5%;margin-right: 5%;">
+                                <img src="./assets/icon/red-location.png" attr="loc" width="20px" height="20px">
                                 <span style="color:white; font-size: 1.8em;margin-left: 6%;margin-right: 6%;">!</span>
-                                <img src="./assets/icon/grey-location.png" attr="loc" width="20px" height="20px">
-                                <img src="./assets/icon/grey-location.png" attr="loc" width="20px" height="20px" style="margin-left: 8%;margin-right: 2%;">
-                                <img src="./assets/icon/grey-location.png" attr="loc" width="20px" height="20px">
-                                <img src="./assets/icon/grey-location.png" attr="loc" width="20px" height="20px" style="margin-left: 5%;margin-right: 5%;">
-                                <img src="./assets/icon/grey-location.png" attr="loc" width="20px" height="20px" style="margin-right: 9%;">
+                                <img src="./assets/icon/red-location.png" attr="loc" width="20px" height="20px">
+                                <img src="./assets/icon/red-location.png" attr="loc" width="20px" height="20px" style="margin-left: 8%;margin-right: 2%;">
+                                <img src="./assets/icon/red-location.png" attr="loc" width="20px" height="20px">
+                                <img src="./assets/icon/red-location.png" attr="loc" width="20px" height="20px" style="margin-left: 5%;margin-right: 5%;">
+                                <img src="./assets/icon/red-location.png" attr="loc" width="20px" height="20px" style="margin-right: 9%;">
                                 <img src="./assets/icon/shop.png" attr="shop" width="25px" height="25px" >
                             </div>
                             <div class="road-line"></div>
                         </div>
                         <table width="100%" style="margin-top: 3%;">
                             <tr>
-                                <td style="text-align: center">
+                                <td style="text-align: center; vertical-align: top;" rowspan="3">
                                     <img src="./assets/icon/calculator.png" alt="calculation" width="15px" height="20px" />
                                 </td>
-                                <td style="font-family: DB-Helvethaica-X-55-Regular;">ค่าใช้จ่ายโดยประมาณ</td>
-                                <td>฿320</td>
+                                <td style="font-family: DB-Helvethaica-X-55-Regular; vertical-align:top;" rowspan="3">
+                                    <div>ค่าใช้จ่ายโดยประมาณ</div>
+                                    <div class="detail-faded-text">ยอดรวมออเดอร์</div>
+                                    <div class="detail-faded-text">กำไร</div>
+                                </td>
+                                <td rowspan="3" style="vertical-align:top;">
+                                    <div>฿320</div>
+                                    <div class="detail-faded-text">฿200</div>
+                                    <div class="detail-faded-text">฿120</div>
+                                </td>
                                 <td>
                                     <img src="./assets/icon/journey.png" alt="journey" width="20px" height="20px" />
                                 </td>
@@ -151,23 +152,23 @@
                                 <td>13 กม</td>
                             </tr>
                             <tr>
-                                <td rowspan="2" style="vertical-align:top; padding-top: 3px; text-align: center;">
-                                    <img src="./assets/icon/clock.png" alt="calculation" width="20px" height="20px" />
-                                </td>
-                                <td style="font-family: DB-Helvethaica-X-55-Regular;">เวลาที่ใช้โดยประมาณ</td>
-                                <td>30 นาที</td>
                                 <td>
                                     <img src="./assets/icon/delivery-truck.png" alt="journey" width="20px" height="15px" />
                                 </td>
                                 <td style="font-family: DB-Helvethaica-X-55-Regular;">ประเภทการเดินทาง</td>
                                 <td>รถบรรทุก 4 ล้อ</td>
                             </tr>
-                            <tr style="font-family: DB-Helvethaica-X-55-Regular;font-size: 0.9em;color: #828282">
-                                <td style="vertical-align:top;">
-                                    เวลาเริ่มต้น-สิ้นสุด
+                            <tr>
+                                <td style="vertical-align:top; padding-top: 3px; text-align: center;">
+                                    <img src="./assets/icon/clock.png" alt="calculation" width="20px" height="20px" />
                                 </td>
-                                <td style="vertical-align: top;">
-                                    18:00 - 18:30 น.
+                                <td style="font-family: DB-Helvethaica-X-55-Regular;">
+                                    <div>เวลาที่ใช้โดยประมาณ</div>
+                                    <div class="detail-faded-text">เวลาเริ่มต้น-สิ้นสุด</div>
+                                </td>
+                                <td>
+                                    <div>30 นาที</div>
+                                    <div class="detail-faded-text">18:00 - 18:30 น.</div>
                                 </td>
                             </tr>
                         </table>
@@ -175,87 +176,142 @@
                 </div>
                 <div class="right-block">
                     <div style="font-size: 1.3em;">ออเดอร์ทั้งหมด</div>
-                    <div class="right-box">
-                        <table width="100%" style="font-size: 1.15em">
-                            <tr>
-                                <td rowspan="2" style="vertical-align:top; text-align: center;">
-                                    <div class="rounded-btn">บ้านที่ 1</div>
-                                </td>
-                                <td>หมู่บ้านดวงฤทัย</td>
-                                <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left;">
-                                    234/3 แขวงแสนแสบ เขตมีนบุรี 10510
-                                </td>
-                                <td rowspan="2">
-                                    <div class="rectangele-btn">ส่งแล้ว</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span style="font-family: DB-Helvethaica-X-55-Regular;">คุณ</span>
-                                    <span>เด่นดวง</span>
-                                </td>
-                                <td style="padding-right: 7%;">
-                                    <span style="font-family: DB-Helvethaica-X-55-Regular;">โทร</span>
-                                    <span>081-234-5678</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td colspan="3">
-                                    <div style="border: 0.8px solid #D9D9D9;margin: 10px 0;"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2" style="vertical-align:top; text-align: center;">
-                                    <div class="rounded-btn">บ้านที่ 2</div>
-                                </td>
-                                <td>หมู่บ้านดวงฤทัย</td>
-                                <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left;">
-                                    234/3 แขวงแสนแสบ เขตมีนบุรี 10510
-                                </td>
-                                <td rowspan="2">
-                                    <div class="rectangele-btn">ส่งแล้ว</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span style="font-family: DB-Helvethaica-X-55-Regular;">คุณ</span>
-                                    <span>เด่นดวง</span>
-                                </td>
-                                <td style="padding-right: 7%;">
-                                    <span style="font-family: DB-Helvethaica-X-55-Regular;">โทร</span>
-                                    <span>081-234-5678</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td colspan="3">
-                                    <div style="border: 0.8px solid #D9D9D9;margin: 10px 0;"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2" style="vertical-align:top; text-align: center;">
-                                    <div class="rounded-btn">บ้านที่ 3</div>
-                                </td>
-                                <td>หมู่บ้านดวงฤทัย</td>
-                                <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left;">
-                                    234/3 แขวงแสนแสบ เขตมีนบุรี 10510
-                                </td>
-                                <td rowspan="2">
-                                    <div></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span style="font-family: DB-Helvethaica-X-55-Regular;">คุณ</span>
-                                    <span>เด่นดวง</span>
-                                </td>
-                                <td style="padding-right: 7%;">
-                                    <span style="font-family: DB-Helvethaica-X-55-Regular;">โทร</span>
-                                    <span>081-234-5678</span>
-                                </td>
-                            </tr>
-                        </table>
+                    <div class="row-layout button">
+                        <div class="rounded-btn active will-deliver" id="will-deliver">กำลังไปส่ง</div>
+                        <div class="rounded-btn delivered-done" id="delivered-done">จัดส่งเสร็จแล้ว</div>
+                    </div>
+                    <div class="row-layout">
+                        <div class="right-block-left-box">
+                            <table width="100%" style="font-size: 1.15em">
+                                <tr>
+                                    <td rowspan="2" style="vertical-align:top; text-align: center;">
+                                        <div class="rounded-btn">บ้านที่ 1</div>
+                                    </td>
+                                    <td>หมู่บ้านดวงฤทัย</td>
+                                    <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left;">
+                                        234/3 แขวงแสนแสบ เขตมีนบุรี 10510
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span style="font-family: DB-Helvethaica-X-55-Regular;">คุณ</span>
+                                        <span>เด่นดวง</span>
+                                    </td>
+                                    <td style="padding-right: 7%;">
+                                        <span style="font-family: DB-Helvethaica-X-55-Regular;">โทร</span>
+                                        <span>081-234-5678</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td colspan="3">
+                                        <div style="border: 0.8px solid #D9D9D9;margin: 10px 0;"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2" style="vertical-align:top; text-align: center;">
+                                        <div class="rounded-btn">บ้านที่ 2</div>
+                                    </td>
+                                    <td>หมู่บ้านดวงฤทัย</td>
+                                    <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left;">
+                                        234/3 แขวงแสนแสบ เขตมีนบุรี 10510
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span style="font-family: DB-Helvethaica-X-55-Regular;">คุณ</span>
+                                        <span>เด่นดวง</span>
+                                    </td>
+                                    <td style="padding-right: 7%;">
+                                        <span style="font-family: DB-Helvethaica-X-55-Regular;">โทร</span>
+                                        <span>081-234-5678</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td colspan="3">
+                                        <div style="border: 0.8px solid #D9D9D9;margin: 10px 0;"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2" style="vertical-align:top; text-align: center;">
+                                        <div class="rounded-btn">บ้านที่ 3</div>
+                                    </td>
+                                    <td>หมู่บ้านดวงฤทัย</td>
+                                    <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left;">
+                                        234/3 แขวงแสนแสบ เขตมีนบุรี 10510
+                                    </td>
+                                    <td rowspan="2">
+                                        <div></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span style="font-family: DB-Helvethaica-X-55-Regular;">คุณ</span>
+                                        <span>เด่นดวง</span>
+                                    </td>
+                                    <td style="padding-right: 7%;">
+                                        <span style="font-family: DB-Helvethaica-X-55-Regular;">โทร</span>
+                                        <span>081-234-5678</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="right-block-right-box">
+                            <table width="100%" style="font-size: 1.15em">
+                                <tr>
+                                    <td rowspan="2" style="vertical-align:top; text-align: center;">
+                                        <div class="rounded-btn">บ้านที่ 1</div>
+                                    </td>
+                                    <td>คุณ</td>
+                                    <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left;">
+                                        เด่นดวง
+                                    </td>
+                                    <td>โทร</td>
+                                    <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left;">
+                                        081-234-5678
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left;">ฟีดแบ็ค</td>
+                                    <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left; color: #828282">
+                                        - ยังไม่มีข้อมูล-
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td colspan="4">
+                                        <div style="border: 0.8px solid #D9D9D9;margin: 10px 0;"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2" style="vertical-align:top; text-align: center;">
+                                        <div class="rounded-btn">บ้านที่ 2</div>
+                                    </td>
+                                    <td>คุณ</td>
+                                    <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left;">
+                                        เด่นจัง
+                                    </td>
+                                    <td>โทร</td>
+                                    <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left;">
+                                        081-234-5678
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left; vertical-align:top;">ฟีดแบ็ค</td>
+                                    <td style="font-family: DB-Helvethaica-X-55-Regular; text-align: left;">
+                                        <div>
+                                            <img src="./assets/icon/rate.png" alt="rate" width="20px" height="20px" />
+                                            <img src="./assets/icon/rate.png" alt="rate" width="20px" height="20px" />
+                                            <img src="./assets/icon/rate.png" alt="rate" width="20px" height="20px" />
+                                            <img src="./assets/icon/rate.png" alt="rate" width="20px" height="20px" />
+                                            <img src="./assets/icon/no-rate.png" alt="rate" width="20px" height="20px" />
+                                        </div>
+                                        <div>คนขับพูดจาสุภาพมาก ของส่งไวมากค่ะ <br/> ชอบมาก อยากซื้อ CP กินทุกวัน</div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                     <div class="view-all">
                         <div>
@@ -271,9 +327,15 @@
                 <div class="save-change">บันทึกการเปลี่ยนแปลง</div>
             </div>
         </div>
+        <!------------- edit driver -------------->
+        <!-- <div id="edit-driver-page" class="modal">
+            <p>Thanks for clicking. That felt good.</p>
+            <a href="#" rel="modal:close">Close</a>
+        </div> -->
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./script/orderDetail.js"></script>
     <script>
         function initMap() {
             var bangkok = {lat: 13.75, lng: 100.51}

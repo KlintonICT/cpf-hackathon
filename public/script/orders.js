@@ -33,7 +33,7 @@
             $('#order-list-btn').removeClass('active');
             $('#map-btn').addClass('active');
             $('#list-of-order').hide();
-            $('#big-map').show();
+            $('#big-map').slideDown(500);
         });
     }
 
