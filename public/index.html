@@ -300,7 +300,7 @@
             container: 'big-map',
             style: 'mapbox://styles/mapbox/streets-v11',
             center: [100.515, 13.7521],
-            zoom: 14
+            zoom: 13
         })
         var locations = {
             "type": "FeatureCollection",
@@ -349,101 +349,79 @@
             new mapboxgl.Marker(el).setLngLat(marker.geometry.coordinates)
                 .addTo(map);
         })
-        map.on('load', () => {
-            map.addSource('route', {
-                'type': 'geojson',
-                'data': {
-                    'type': 'Feature',
-                    'properties': {},
-                    'geometry': {
-                        'type': 'LineString',
-                        'coordinates': [
-                            [100.50, 13.75],
-                            [100.500464, 13.751727],
-                            [100.501547, 13.751649],
-                            [100.502030, 13.752019],
-                            [100.502186, 13.753261],
-                            [100.504652, 13.752713],
-                            [100.503778, 13.749218],
-                            [100.510002, 13.747007]
-                        ]
-                    }
+        var locationsBlue = {
+            "type": "FeatureCollection",
+            "features": [{
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [100.485357, 13.745512]
                 }
-            });
-            map.addLayer({
-                'id': 'route',
-                'type': 'line',
-                'source': 'route',
-                'layout': {
-                    'line-join': 'round',
-                    'line-cap': 'round'
-                },
-                'paint': {
-                    'line-color': '#0080ff',
-                    'line-width': 4
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [100.483705, 13.746137]
                 }
-            });
-            map.addSource('route2', {
-                'type': 'geojson',
-                'data': {
-                    'type': 'Feature',
-                    'properties': {},
-                    'geometry': {
-                        'type': 'LineString',
-                        'coordinates': [
-                            [100.51, 13.747],
-                            [100.516114, 13.745614],
-                            [100.516724, 13.749098],
-                            [100.530774, 13.746170], 
-                            [100.531746, 13.751809]
-                        ]
-                    }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [100.484018, 13.745429]
                 }
-            });
-            map.addLayer({
-                'id': 'route2',
-                'type': 'line',
-                'source': 'route2',
-                'layout': {
-                    'line-join': 'round',
-                    'line-cap': 'round'
-                },
-                'paint': {
-                    'line-color': '#0080ff',
-                    'line-width': 4
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [100.481325, 13.743967]
                 }
-            });
-            map.addSource('route3', {
-                'type': 'geojson',
-                'data': {
-                    'type': 'Feature',
-                    'properties': {},
-                    'geometry': {
-                        'type': 'LineString',
-                        'coordinates': [
-                            [100.501472, 13.755194],
-                            [100.501020, 13.752664],
-                            [100.499920, 13.752653],
-                            [100.499908, 13.751679],
-                            [100.500462, 13.751737],
-                            [100.50, 13.75]
-                        ]
-                    }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [100.483381, 13.743248]
                 }
-            });
-            map.addLayer({
-                'id': 'route3',
-                'type': 'line',
-                'source': 'route3',
-                'layout': {
-                    'line-join': 'round',
-                    'line-cap': 'round'
-                },
-                'paint': {
-                    'line-color': '#0080ff',
-                    'line-width': 4
+            }]
+        }
+        locationsBlue.features.forEach(function (marker) {
+            var el = document.createElement('div');
+            el.className = 'markerBlue';
+            new mapboxgl.Marker(el).setLngLat(marker.geometry.coordinates)
+                .addTo(map);
+        })
+        var locationsYellow = {
+            "type": "FeatureCollection",
+            "features": [{
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [100.490224, 13.738793]
                 }
-            });
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [100.491050, 13.739668]
+                }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [100.492477, 13.738730]
+                }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [100.491490, 13.737052]
+                }
+            }]
+        }
+        locationsYellow.features.forEach(function (marker) {
+            var el = document.createElement('div');
+            el.className = 'markerYellow';
+            new mapboxgl.Marker(el).setLngLat(marker.geometry.coordinates)
+                .addTo(map);
         })
         // Just make a change
     </script>

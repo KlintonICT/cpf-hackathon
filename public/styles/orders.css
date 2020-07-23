@@ -203,3 +203,21 @@ tr:last-child td:last-child {
     height: 20px;
     cursor: pointer;
 }
+
+.markerBlue {
+    background-image: url('../assets/icon/blue-location.png');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .markerYellow {
+    background-image: url('../assets/icon/oragne-location.png');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
