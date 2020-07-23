@@ -282,3 +282,11 @@
   .right-block-right-box{
     float: right;
   }
+
+  .marker-error {
+    background-image: url('../assets/icon/alert.png');
+    background-size: cover;
+    width: 5px;
+    height: 25px;
+    cursor: pointer;
+}
