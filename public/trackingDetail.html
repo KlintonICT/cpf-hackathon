@@ -152,8 +152,8 @@
                             <div class="road">
                                 <img src="./assets/icon/shop.png" attr="shop" width="25px" height="25px">
                                 <img src="./assets/icon/red-location.png" attr="loc" width="20px" height="20px" style="margin-left: 5%;margin-right: 5%;">
-                                <img src="./assets/icon/red-location.png" attr="loc" width="20px" height="20px">
                                 <span style="color:red; font-size: 1.8em;margin-left: 6%;margin-right: 6%;">!</span>
+                                <img src="./assets/icon/grey-location.png" attr="loc" width="20px" height="20px">
                                 <img src="./assets/icon/grey-location.png" attr="loc" width="20px" height="20px">
                                 <img src="./assets/icon/grey-location.png" attr="loc" width="20px" height="20px" style="margin-left: 8%;margin-right: 2%;">
                                 <img src="./assets/icon/grey-location.png" attr="loc" width="20px" height="20px">
@@ -506,6 +506,30 @@
                     "type": "Point",
                     "coordinates": [100.531746, 13.751809]
                 }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [100.503776, 13.749205]
+                }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [100.516968, 13.746064]
+                }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [100.519887, 13.748512]
+                }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [100.524441, 13.747148]
+                }
             }]
         }
         locations.features.forEach(function (marker) {
@@ -575,7 +599,7 @@
                             [100.51, 13.747],
                             [100.516114, 13.745614],
                             [100.516724, 13.749098],
-                            [100.530774, 13.746170], 
+                            [100.530774, 13.746170],
                             [100.531746, 13.751809]
                         ]
                     }
@@ -625,7 +649,54 @@
                     'line-width': 4
                 }
             });
+
+            var error = {
+                "type": "FeatureCollection",
+                "features": [{
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [100.503288, 13.753176]
+                    }
+                }]
+            }
+            error.features.forEach(function (marker) {
+                var el = document.createElement('div');
+                el.className = 'marker-error';
+                new mapboxgl.Marker(el).setLngLat(marker.geometry.coordinates)
+                    .addTo(map);
+            })
+            map.addSource('route4', {
+                'type': 'geojson',
+                'data': {
+                    'type': 'Feature',
+                    'properties': {},
+                    'geometry': {
+                        'type': 'LineString',
+                        'coordinates': [
+                            [100.501905, 13.751751],
+                            [100.501283, 13.748062],
+                            [100.503407, 13.747833],
+                            [ 100.503776, 13.749205]
+                        ]
+                    }
+                }
+            });
+            map.addLayer({
+                'id': 'route4',
+                'type': 'line',
+                'source': 'route4',
+                'layout': {
+                    'line-join': 'round',
+                    'line-cap': 'round'
+                },
+                'paint': {
+                    'line-color': '#008140',
+                    'line-width': 4
+                }
+            });
         })
+
     </script>
     </body>
 </html>
