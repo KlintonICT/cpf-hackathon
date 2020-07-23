@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - tragk(Production)
+name: Build and deploy Node.js app to Azure Web App - tragk
 
 on:
   push:
@@ -20,15 +20,16 @@ jobs:
       with:
         node-version: '12.13.0'
 
-    - name: npm install, and build
+    - name: npm install, build, and test
       run: |
         npm install
         npm run build --if-present
+        npm run test --if-present
 
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v1
       with:
-        app-name: 'tragk(dev)'
-        slot-name: 'dev'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_a0523ff4c72e4ffd9ac3f7229afc5f16 }}
+        app-name: 'tragk'
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_0260aab24a1949db9b7d13fdd5334b1a }}
         package: .
