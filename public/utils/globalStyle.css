@@ -60,15 +60,27 @@ body {
 }
 
 .menu-list-item{
-    border-radius: 19px;
+    border-radius: 30px;
     height: 38px;
     width: 38px;
-    background-color: #C4C4C4;
+    border: 2px solid #828282;
+    text-align: center;
 }
 
 .menu-list-item.active{
     background-color: #008140;
     cursor: pointer;
+    text-align: center;
+    vertical-align: center;
+    border: none;
+}
+
+.menu-list-title{
+    color: #828282;
+}
+
+.menu-list-title.active{
+    color: #008140;
 }
 
 .profile{

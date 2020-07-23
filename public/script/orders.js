@@ -1,11 +1,11 @@
 (() => {
     const test = () => {
-        $.getJSON('../data/test.json', data => {
-            console.log(data)
-            data.person.forEach(item => {
-                console.log('Test', item);
-            })
-        })
+        // $.getJSON('../data/test.json', data => {
+        //     console.log(data)
+        //     data.person.forEach(item => {
+        //         console.log('Test', item);
+        //     })
+        // })
     }
 
     const displayDate = () => {
