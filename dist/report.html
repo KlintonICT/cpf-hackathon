@@ -7,8 +7,6 @@
     <title>Report</title>
     <link rel="icon" href="./assets/image/cpf-logo.png" />
     <link rel="stylesheet" type="text/css" href="./utils/globalStyle.css" />
-    <link rel="stylesheet" type="text/css" href="./utils/arrow.css" />
-    <link rel="stylesheet" type="text/css" href="./utils/button.css" />
     <link rel="stylesheet" type="text/css" href="./styles/report.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
@@ -18,20 +16,28 @@
         <div class="menu-side">
             <div class="menu-list">
                 <div class="menu-list-container">
-                    <a class="menu-list-item" href="./index.html"></a>
+                    <a class="menu-list-item" href="./index.html">
+                        <img src="./assets/icon/clipboard.png" alt="img" width="25px" height="25px" style="margin-top: 5px"/>
+                    </a>
                     <span class="menu-list-title">Orders</span>
                 </div>
                 <div class="menu-list-container">
-                    <a class="menu-list-item" href="./tracking.html"></a>
+                    <a class="menu-list-item" href="./tracking.html">
+                        <img src="./assets/icon/map.png" alt="img" width="25px" height="25px" style="margin-top: 7px;"/>
+                    </a>
                     <span class="menu-list-title">Tracking</span>
                 </div>
                 <div class="menu-list-container">
-                    <a class="menu-list-item active" href="#"></a>
-                    <span class="menu-list-title">Report</span>
+                    <a class="menu-list-item active" href="#">
+                        <img src="./assets/icon/pie-chart-white.png" alt="img" width="25px" height="25px" style="margin-top: 6px;"/>
+                    </a>
+                    <span class="menu-list-title active">Report</span>
                 </div>
                 <div class="menu-list-container">
-                    <a class="menu-list-item" href="#"></a>
-                    <span class="menu-list-title">none</span>
+                    <a class="menu-list-item" href="./driver.html">
+                        <img src="./assets/icon/truck.png" alt="img" width="25px" height="25px" style="margin-top: 7px;"/>
+                    </a>
+                    <span class="menu-list-title">Driver</span>
                 </div>
             </div>
             <div class="profile">
@@ -43,9 +49,63 @@
             <div class="title-report">
                 <span class="title">สรุปออเดอร์ทั้งหมด</span>
                 <div class="title-date">
-                    <!-- <input type="text" name="daterange" value="01/01/2018 - 01/15/2018" /> -->
+                    <div class="select-cotainer">
+                        <select id="branch" name="branch" class="branch">
+                            <option value="สาขา ลาดกระบัง">สาขา ลาดกระบัง</option>
+                            <option value="สาขา สยาม">สาขา สยาม</option>
+                            <option value="สาขา อนุสาวรีย์ประชาธิป.." selected>สาขา อนุสาวรีย์ประชาธิป..</option>
+                            <option value="สาขา ประตูน้ำ">สาขา ประตูน้ำ</option>
+                            <option value="สาขา ประตูน้ำ">สาขา ศาลายา</option>
+                        </select>
+                    </div>
+                    <input type="text" name="daterange" value="01/01/2018 - 01/15/2018" class="daterange" id="daterange"/>
                 </div>
             </div>
+            <div class="summary-order-block">
+                <div class="summary-box">
+                    <div class="summary-text">
+                        <img src="./assets/icon/briefcase.png" alt="briefcase" width="25px" height="25px" />
+                        <span>จำนวนออเดอร์ทั้งหมด</span>
+                    </div>
+                    <div class="summar-number-wrapper">
+                        <span class="summar-number-reduce">- 24</span>
+                        <span class="summary-number">1,201</span>
+                    </div>
+                </div>
+                <div class="summary-box">
+                    <div class="summary-text">
+                        <img src="./assets/icon/briefcase.png" alt="briefcase" width="25px" height="25px" />
+                        <span>ค่าใช้จ่ายทั้งหมด</span>
+                    </div>
+                    <div class="summar-number-wrapper">
+                        <span class="summar-number-gain">
+                            <div><i class="arrow-down"></i></div>
+                            <span>฿342</span>
+                        </span>
+                        <span class="summary-number">฿45,050</span>
+                    </div>
+                </div>
+                <div class="summary-box">
+                    <div class="summary-text">
+                        <img src="./assets/icon/briefcase.png" alt="briefcase" width="25px" height="25px" />
+                        <span>จำนวนเที่ยวทั้งหมด</span>
+                    </div>
+                    <div class="summar-number-wrapper">
+                        <span class="summar-number-gain">
+                            <div><i class="arrow-down"></i></div>
+                            <span>43</span>
+                        </span>
+                        <span class="summary-number">634</span>
+                    </div>
+                </div>
+            </div>
+            <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://app.powerbi.com/view?r=eyJrIjoiYzc1NjMwNDgtODMzMC00MzczLWFkNmMtOWViODdiODVjMGE2IiwidCI6IjliYzU4NWY5LWE4YjgtNDMxYy05MDEzLWVmYTdiMmI0MGNkZiIsImMiOjEwfQ%3D%3D" 
+                frameborder="0" 
+                allowFullScreen="true">
+            </iframe>
         </div>
     </div>
 
@@ -53,15 +113,6 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    <script>
-        $(function() {
-          $('input[name="daterange"]').daterangepicker({
-            opens: 'left'
-          }, function(start, end, label) {
-            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-          });
-        });
-    </script>
     <script type="text/javascript" src="./script/report.js"></script>
 </body>
 </html>

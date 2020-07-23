@@ -1,0 +1,106 @@
+.title-report{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-end;
+}
+.title{
+    font-size: 2.5em;
+}
+
+.title-date{
+    font-family: DB-Helvethaica-X-55-Regular;
+    display: flex;
+    flex-direction: row;
+}
+
+.branch{ 
+    font-size: 1.3em;
+    font-family: DB-Helvethaica-X-55-Regular;
+    text-align: center;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+    outline: none;
+    padding: 5px 10px;
+}
+
+.daterange{ 
+    font-family: DB-Helvethaica-X-55-Regular;
+    font-size: 1.3em;
+    margin-left: 20px;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+    outline: none;
+    padding: 5px 10px;
+    padding-right: 30px;
+    background-image: url('../assets/icon/calendar.png');
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+    background-size: 20px 20px;
+}
+
+table{
+    font-size: 1.5em;
+}
+
+td {
+    background: white;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    text-align: center;
+}
+
+th {
+    color: #939393;
+    font-size: 1.1em;
+}
+
+td a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 0.5em;
+}
+
+tr:nth-child(2) td:first-child {
+    border-top-left-radius: 10px;
+}
+
+tr:nth-child(2) td:last-child {
+    border-top-right-radius: 10px;
+}
+
+tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+.larg-arrow .arrow-right {
+    padding: 5px;
+    border: solid #008140;
+    border-width: 0 2px 2px 0; 
+    display: inline-block;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.list-of-driver{
+    margin-top: 5%;
+}
+
+.driver-profile{
+    width: 26px;
+    height: 26px;
+    border-radius: 13px;
+    margin-right: 20px;
+}
+
+.profile-block{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

@@ -4,6 +4,10 @@
     font-size: 1.3em;;
 }
 
+.back-to-order .arrow{
+    border-color: #008140;
+}
+
 .divider-block-up {
     display: flex;
     flex-direction: row;

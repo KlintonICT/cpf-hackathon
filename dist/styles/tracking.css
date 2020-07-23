@@ -160,3 +160,11 @@ td a{
     height: 20px;
     cursor: pointer;
 }
+
+.marker-error {
+    background-image: url('../assets/icon/alert.png');
+    background-size: cover;
+    width: 5px;
+    height: 25px;
+    cursor: pointer;
+}

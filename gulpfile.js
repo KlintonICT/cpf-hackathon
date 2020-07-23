@@ -3,7 +3,7 @@ const sass = require('gulp-sass')
 
 const scss = (cb) => {
     return gulp.src('./src/scss/**/*.scss')
-      .pipe(sass()) // Using gulp-sass
+      .pipe(sass.sync({outputStyle: 'compressed'})) // Using gulp-sass
       .pipe(gulp.dest('./public/styles'))
 }
 

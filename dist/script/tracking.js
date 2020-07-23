@@ -5,6 +5,8 @@
                 $(`#active-column${i}`).addClass('active');
             }
             document.getElementById('urgent').style.color = 'red';
+            document.getElementById('danger-text').style.color = 'red';
+            document.getElementById('danger-text').innerHTML =  'ล่าช้า 10 นาที';
         })
     }
 
