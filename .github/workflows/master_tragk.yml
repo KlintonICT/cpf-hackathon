@@ -30,5 +30,5 @@ jobs:
       with:
         app-name: 'tragk(dev)'
         slot-name: 'dev'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_a0523ff4c72e4ffd9ac3f7229afc5f16 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_0260aab24a1949db9b7d13fdd5334b1a }}
         package: .
