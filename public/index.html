@@ -300,7 +300,7 @@
           //useXhr: 1, // Use XHR instead of fetch to report failures (if available),
           //crossOrigin: "anonymous", // When supplied this will add the provided value as the cross origin attribute on the script tag
           cfg: { // Application Insights Configuration
-            instrumentationKey: "673e73bd-69e3-409b-8f77-17d88fab0fa0"
+            instrumentationKey: ""
             /* ...Other Configuration Options... */
           }
         });
@@ -309,8 +309,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="./script/orders.js"></script>
     <script>
-        mapboxgl.accessToken =
-            'pk.eyJ1Ijoicmluc2FtYSIsImEiOiJja2N2aW5mZ2IwNG5jMnNtZjkxb2RnbzQ3In0.SnLkzy41ZujeeVxauIoWhQ';
+        mapboxgl.accessToken = '';
         var map = new mapboxgl.Map({
             container: 'big-map',
             style: 'mapbox://styles/mapbox/streets-v11',
